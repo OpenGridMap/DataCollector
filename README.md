@@ -1,4 +1,1 @@
-DaoKouIOS
-=========
-
-DaoKou Community
+# DataCollector
