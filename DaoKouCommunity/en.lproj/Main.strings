@@ -1,0 +1,21 @@
+
+/* Class = "IBUITabBarItem"; title = "Matching"; ObjectID = "27X-uL-xJn"; */
+"27X-uL-xJn.title" = "Matching";
+
+/* Class = "IBUITabBarItem"; title = "Me"; ObjectID = "9OH-Np-tbs"; */
+"9OH-Np-tbs.title" = "Me";
+
+/* Class = "IBUILabel"; text = "Loaded by SecondViewController"; ObjectID = "NDk-cv-Gan"; */
+"NDk-cv-Gan.text" = "Loaded by SecondViewController";
+
+/* Class = "IBUITabBarItem"; title = "Community"; ObjectID = "acW-dT-cKf"; */
+"acW-dT-cKf.title" = "Community";
+
+/* Class = "IBUITabBarItem"; title = "Team"; ObjectID = "cPa-gy-q4n"; */
+"cPa-gy-q4n.title" = "Team";
+
+/* Class = "IBUITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "yy2-IJ-IPy"; */
+"yy2-IJ-IPy.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "IBUILabel"; text = "Second View"; ObjectID = "zEq-FU-wV5"; */
+"zEq-FU-wV5.text" = "Second View";
