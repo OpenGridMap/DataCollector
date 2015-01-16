@@ -9,7 +9,7 @@
         <!--DataList-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="9pv-A4-QxB" customClass="FirstViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -385,6 +385,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5yF-ts-N6V">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JtW-5A-902">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
@@ -401,58 +404,45 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5yF-ts-N6V">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="648" id="0hy-TF-3xC"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="0hy-TF-3xC"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="0hy-TF-3xC"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JtW-5A-902" firstAttribute="trailing" secondItem="5yF-ts-N6V" secondAttribute="trailing" id="4ld-As-REt"/>
-                            <constraint firstItem="JtW-5A-902" firstAttribute="top" secondItem="j5k-GR-Ccy" secondAttribute="bottom" id="TVR-BH-qVE"/>
-                            <constraint firstAttribute="trailing" secondItem="JtW-5A-902" secondAttribute="trailing" id="Upx-pi-0F2"/>
-                            <constraint firstItem="5yF-ts-N6V" firstAttribute="bottom" secondItem="Dhe-Yf-TQD" secondAttribute="top" id="avd-Er-NbX"/>
-                            <constraint firstItem="5yF-ts-N6V" firstAttribute="leading" secondItem="QuL-6N-oo9" secondAttribute="leading" id="ep2-hv-EYD"/>
-                            <constraint firstItem="JtW-5A-902" firstAttribute="leading" secondItem="5yF-ts-N6V" secondAttribute="leading" id="xNQ-Pg-PAP"/>
+                            <constraint firstItem="5yF-ts-N6V" firstAttribute="leading" secondItem="JtW-5A-902" secondAttribute="leading" id="If3-wq-49H"/>
+                            <constraint firstItem="5yF-ts-N6V" firstAttribute="trailing" secondItem="JtW-5A-902" secondAttribute="trailing" id="O40-6G-AX6"/>
+                            <constraint firstItem="5yF-ts-N6V" firstAttribute="leading" secondItem="QuL-6N-oo9" secondAttribute="leading" id="Qsi-QK-z3q"/>
+                            <constraint firstItem="5yF-ts-N6V" firstAttribute="top" secondItem="QuL-6N-oo9" secondAttribute="top" constant="20" symbolic="YES" id="T2V-rS-VUk"/>
+                            <constraint firstAttribute="trailing" secondItem="5yF-ts-N6V" secondAttribute="trailing" id="jnx-8P-ldv"/>
+                            <constraint firstItem="JtW-5A-902" firstAttribute="top" secondItem="5yF-ts-N6V" secondAttribute="bottom" constant="2" id="qvO-Vu-kZG"/>
+                            <constraint firstItem="Dhe-Yf-TQD" firstAttribute="top" secondItem="JtW-5A-902" secondAttribute="bottom" constant="8" id="tti-0x-dKP"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="JtW-5A-902"/>
                                 <exclude reference="5yF-ts-N6V"/>
+                                <exclude reference="JtW-5A-902"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="4ld-As-REt"/>
-                                <exclude reference="TVR-BH-qVE"/>
-                                <exclude reference="Upx-pi-0F2"/>
-                                <exclude reference="xNQ-Pg-PAP"/>
-                                <exclude reference="avd-Er-NbX"/>
-                                <exclude reference="ep2-hv-EYD"/>
+                                <exclude reference="If3-wq-49H"/>
+                                <exclude reference="O40-6G-AX6"/>
+                                <exclude reference="Qsi-QK-z3q"/>
+                                <exclude reference="T2V-rS-VUk"/>
+                                <exclude reference="jnx-8P-ldv"/>
+                                <exclude reference="qvO-Vu-kZG"/>
+                                <exclude reference="tti-0x-dKP"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="JtW-5A-902"/>
                                 <include reference="5yF-ts-N6V"/>
+                                <include reference="JtW-5A-902"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="4ld-As-REt"/>
-                                <include reference="TVR-BH-qVE"/>
-                                <include reference="Upx-pi-0F2"/>
-                                <include reference="xNQ-Pg-PAP"/>
-                                <include reference="avd-Er-NbX"/>
-                                <include reference="ep2-hv-EYD"/>
+                                <include reference="If3-wq-49H"/>
+                                <include reference="O40-6G-AX6"/>
+                                <include reference="Qsi-QK-z3q"/>
+                                <include reference="T2V-rS-VUk"/>
+                                <include reference="jnx-8P-ldv"/>
+                                <include reference="qvO-Vu-kZG"/>
+                                <include reference="tti-0x-dKP"/>
                             </mask>
                         </variation>
                     </view>
