@@ -1,6 +1,6 @@
 
 /* Class = "IBUITabBarItem"; title = "Matching"; ObjectID = "27X-uL-xJn"; */
-"27X-uL-xJn.title" = "Matching";
+"27X-uL-xJn.title" = "WorkFlow";
 
 /* Class = "IBUITabBarItem"; title = "Me"; ObjectID = "9OH-Np-tbs"; */
 "9OH-Np-tbs.title" = "Me";
@@ -9,7 +9,7 @@
 "NDk-cv-Gan.text" = "Loaded by SecondViewController";
 
 /* Class = "IBUITabBarItem"; title = "Community"; ObjectID = "acW-dT-cKf"; */
-"acW-dT-cKf.title" = "Community";
+"acW-dT-cKf.title" = "Data";
 
 /* Class = "IBUITabBarItem"; title = "Team"; ObjectID = "cPa-gy-q4n"; */
 "cPa-gy-q4n.title" = "Team";

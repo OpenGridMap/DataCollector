@@ -6,19 +6,19 @@
 //  Copyright (c) 2014 allen. All rights reserved.
 //
 
-#import "DetailedDiscusstionViewController.h"
-#import "Discusstion.h"
+#import "DetailedItermViewController.h"
+#import "DataIterm.h"
 
-@interface DetailedDiscusstionViewController ()
+@interface DetailedItermViewController ()
 - (void)configureView;
 
 @end
 
-@implementation DetailedDiscusstionViewController
+@implementation DetailedItermViewController
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(Discusstion*)newDetailItem
+- (void)setDetailItem:(DataIterm*)newDetailItem
 {
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;

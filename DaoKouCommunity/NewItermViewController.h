@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewDiscusstionViewController : UIViewController
-
-
-- (IBAction)goBack:(id)sender;
+@interface NewItermViewController : UIViewController < UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @end

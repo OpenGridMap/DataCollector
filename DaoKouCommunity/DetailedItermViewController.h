@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Discusstion.h"
+#import "DataIterm.h"
 
-@interface DetailedDiscusstionViewController : UIViewController
+@interface DetailedItermViewController : UIViewController
 
-@property (strong, nonatomic) Discusstion* detailItem;
+@property (strong, nonatomic) DataIterm* detailItem;
 
 @property (weak, nonatomic) IBOutlet UITextField *dateField;
 @property (weak, nonatomic) IBOutlet UITextField *titleField;

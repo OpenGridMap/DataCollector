@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Discusstion : NSObject
+@interface DataIterm : NSObject
 
 @property (strong, nonatomic) NSNumber *discusstionId;
 @property (strong, nonatomic) NSString* author;

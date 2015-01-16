@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 allen. All rights reserved.
 //
 
-#import "Discusstion.h"
+#import "DataIterm.h"
 
-@implementation Discusstion
+@implementation DataIterm
 
 - (id)initWithAuthor:(NSString*)author publischDate:(NSDate*)publischDate content:(NSString*)content title:(NSString*)title{
     self = [super init];

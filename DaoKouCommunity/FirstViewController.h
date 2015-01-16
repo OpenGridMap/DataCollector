@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Discusstion.h"
+#import "DataIterm.h"
 #import "User.h"
 
 @interface FirstViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>

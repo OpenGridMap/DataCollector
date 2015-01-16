@@ -7,8 +7,8 @@
 //
 
 #import "FirstViewController.h"
-#import "DetailedDiscusstionViewController.h"
-#import "NewDiscusstionViewController.h"
+#import "DetailedItermViewController.h"
+#import "NewItermViewController.h"
 
 
 @interface FirstViewController ()
@@ -27,7 +27,7 @@
     // self.tableView.contentInset = UIEdgeInsetsMake(0, -15, 0, 0);
     
     //hide the navigationbar
-    self.navigationController.hidesBarsOnSwipe=TRUE;
+    //self.navigationController.hidesBarsOnSwipe=TRUE;
     
     [self initData];
     
@@ -64,7 +64,7 @@
         [dateComponents setDay:r];
         NSDate *startDate = [calendar dateFromComponents:dateComponents];
         
-        Discusstion* discusstion = [[[Discusstion alloc] init] initWithAuthor:[NSString stringWithFormat: @"user %d.", i] publischDate:startDate content:[NSString stringWithFormat: @"content %d.", i] title:[NSString stringWithFormat: @"title %d.", i]  ];
+        DataIterm* discusstion = [[[DataIterm alloc] init] initWithAuthor:[NSString stringWithFormat: @"user %d.", i] publischDate:startDate content:[NSString stringWithFormat: @"content %d.", i] title:[NSString stringWithFormat: @"title %d.", i]  ];
         [_objects addObject:discusstion];
     }
 }
@@ -131,7 +131,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                       reuseIdentifier:MyIdentifier];
     }
-    Discusstion *object = _objects[indexPath.row];
+    DataIterm *object = _objects[indexPath.row];
     //    UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
     //    [imageView setImage:[UIImage imageNamed:dis.image]];
     
@@ -175,7 +175,7 @@
 #pragma mark SwipeDelte
 //实现了此方法向左滑动就会显示删除按钮
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
-    Discusstion *dis = _objects[indexPath.row];
+    DataIterm *dis = _objects[indexPath.row];
     if (editingStyle==UITableViewCellEditingStyleDelete) {
         [_objects removeObject:dis];
         //考虑到性能这里不建议使用reloadData
@@ -208,10 +208,10 @@
 
 #pragma mark 排序
 -(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
-    Discusstion *sourceDis=_objects[sourceIndexPath.row];
-    Discusstion *destinationDis=_objects[destinationIndexPath.row];
+    DataIterm *sourceDis=_objects[sourceIndexPath.row];
+    DataIterm *destinationDis=_objects[destinationIndexPath.row];
 
-    Discusstion *tmpDis= destinationDis;
+    DataIterm *tmpDis= destinationDis;
     destinationDis = sourceDis;
     sourceDis = tmpDis;
     //[_objects removeObject:destinationDis];
@@ -240,7 +240,7 @@
     }
     if ([[segue identifier] isEqualToString:@"PushToDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Discusstion *object = _objects[indexPath.row];
+        DataIterm *object = _objects[indexPath.row];
         [segue.destinationViewController setDetailItem:object];
     }
 }
