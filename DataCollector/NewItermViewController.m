@@ -241,7 +241,10 @@
 
 
 
-
+#pragma mark - Overriden UIViewController methods
+- (BOOL)hidesBottomBarWhenPushed {
+    return YES;
+}
 
 
 #pragma mark - Navigation

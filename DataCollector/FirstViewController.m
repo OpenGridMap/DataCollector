@@ -64,7 +64,7 @@
         [dateComponents setDay:r];
         NSDate *startDate = [calendar dateFromComponents:dateComponents];
         
-        DataIterm* discusstion = [[[DataIterm alloc] init] initWithAuthor:[NSString stringWithFormat: @"user %d.", i] publischDate:startDate content:[NSString stringWithFormat: @"content %d.", i] title:[NSString stringWithFormat: @"title %d.", i]  ];
+        DataIterm* discusstion = [[[DataIterm alloc] init] initWithAuthor:[NSString stringWithFormat: @"user%d", i] publischDate:startDate content:[NSString stringWithFormat: @"This is the content description for data iterm%d.", i] title:[NSString stringWithFormat: @"title%d", i]  ];
         [_objects addObject:discusstion];
     }
 }
@@ -230,13 +230,13 @@
 
 
 
-
-
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([segue.identifier isEqualToString:@"newDiscuss"]) {
-        //NewDiscusstionViewController *newViewController = segue.destinationViewController;
+//        NewItermViewController *newViewController = segue.destinationViewController;
+//        newViewController.hidesBottomBarWhenPushed = YES;  // This property needs to be set before pushing viewController to the navigationController's stack.
+//        [self.navigationController pushViewController:newViewController animated:YES];
     }
     if ([[segue identifier] isEqualToString:@"PushToDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];

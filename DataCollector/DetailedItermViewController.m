@@ -59,6 +59,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma mark - Overriden UIViewController methods
+- (BOOL)hidesBottomBarWhenPushed {
+    return YES;
+}
+
+
 /*
 #pragma mark - Navigation
 
