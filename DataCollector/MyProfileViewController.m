@@ -17,7 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.tableView.contentInset = UIEdgeInsetsMake(0, -15, 0, 0);
+    //self.tableView.contentInset = UIEdgeInsetsMake(0, -15, 0, 0);
+    self.automaticallyAdjustsScrollViewInsets = NO;
+
 }
 
 - (void)didReceiveMemoryWarning {
