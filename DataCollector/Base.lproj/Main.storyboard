@@ -617,7 +617,7 @@
                 </navigationItem>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WHG-XI-Diy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1615.5" y="-282.75"/>
+            <point key="canvasLocation" x="1542" y="-249.75"/>
         </scene>
         <!--Collection-->
         <scene sceneID="wg7-f3-ORb">

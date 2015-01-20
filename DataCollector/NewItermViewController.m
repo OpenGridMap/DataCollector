@@ -90,6 +90,10 @@
     
     if (sourceType == UIImagePickerControllerSourceTypeCamera)
     {
+
+        imagePickerController.allowsEditing = YES;
+        //
+        
         /*
          The user wants to use the camera interface. Set up our custom overlay view for the camera.
          */
@@ -98,14 +102,14 @@
         /*
          Load the overlay view from the OverlayView nib file. Self is the File's Owner for the nib file, so the overlayView outlet is set to the main view in the nib. Pass that view to the image picker controller to use as its overlay view, and set self's reference to the view to nil.
          */
-        [[NSBundle mainBundle] loadNibNamed:@"OverlayView" owner:self options:nil];
-        self.overlayView.frame = imagePickerController.cameraOverlayView.frame;
+//        [[NSBundle mainBundle] loadNibNamed:@"OverlayView" owner:self options:nil];
+//        self.overlayView.frame = imagePickerController.cameraOverlayView.frame;
 //        imagePickerController.cameraOverlayView = self.overlayView;
 //        self.overlayView = nil;
     }
     
     self.imagePickerController = imagePickerController;
-    [self presentViewController:self.imagePickerController animated:YES completion:nil];
+    [self presentViewController:self.imagePickerController animated:YES completion:NULL];
 }
 
 
@@ -221,7 +225,7 @@
     UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
     
     [self.capturedImages addObject:image];
-    
+    self.imageView.image = image;
     if ([self.cameraTimer isValid])
     {
         return;
