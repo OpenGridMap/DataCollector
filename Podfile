@@ -1,7 +1,7 @@
 # Uncomment this line to define a global platform for your project
 
 workspace 'DataCollector.xcworkspace'
-#platform :ios, '7.1'
+platform :ios, '8.1'
 xcodeproj 'DataCollector/DataCollector.xcodeproj'
 
 target :DataCollector do
