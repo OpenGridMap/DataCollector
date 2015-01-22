@@ -52,6 +52,17 @@
     //    _quizArray = @[q1, q2, q3, q4, q5];
     //    _quizArray = [NSMutableArray arrayWithObjects:q1, q2];
     
+    self.thumbnails = [NSMutableArray arrayWithObjects:@"paper.jpg",
+                       @"superMari.jpg",
+                       @"hamburger.jpg",
+                       @"superMari.jpg",
+                       @"paper.jpg",
+                       @"hamburger.jpg",
+                       @"paper.jpg",
+                       @"hamburger.jpg",
+                       @"paper.jpg",
+                       @"hamburger.jpg",nil];
+    
     for (int i = 1; i <= 10; i++){
         NSDate *today = [NSDate date];
         NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -64,7 +75,7 @@
         [dateComponents setDay:r];
         NSDate *startDate = [calendar dateFromComponents:dateComponents];
         
-        DataIterm* discusstion = [[[DataIterm alloc] init] initWithAuthor:[NSString stringWithFormat: @"user%d", i] publischDate:startDate content:[NSString stringWithFormat: @"This is the content description for data iterm%d.", i] title:[NSString stringWithFormat: @"title%d", i]  ];
+        DataIterm* discusstion = [[[DataIterm alloc] init] initWithAuthor:[NSString stringWithFormat: @"user%d", i] publischDate:startDate content:[NSString stringWithFormat: @"This is the content description for data iterm%d.", i] title:[NSString stringWithFormat: @"title%d", i] image:[UIImage imageNamed:_thumbnails[i-1]]];
         [_objects addObject:discusstion];
     }
 }
@@ -135,7 +146,16 @@
     //    UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
     //    [imageView setImage:[UIImage imageNamed:dis.image]];
     
-    cell.imageView.image = [UIImage imageNamed:@"creme_brelee.jpg"];
+//    NSURL *url = [NSURL URLWithString:[self.thumbnails objectAtIndex:indexPath.row]];
+//    __block ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+//    [request setCompletionBlock:^{
+//        NSData *responseData = [request responseData];
+//        UIImage *img = [UIImage imageWithData:responseData];
+//        [self.myImageView setImage:img];
+//    }];
+//    [request startAsynchronous];
+    
+    cell.imageView.image = [UIImage imageNamed:[self.thumbnails objectAtIndex:indexPath.row]];
     cell.textLabel.text = object.title;
     cell.detailTextLabel.text = object.content;
     NSLog(@"%@", object.title);

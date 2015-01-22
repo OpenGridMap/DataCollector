@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property NSMutableArray* objects;
+@property NSMutableArray* thumbnails;
 @property NSMutableArray* statusCells;//存储cell，用于计算高度
 
 

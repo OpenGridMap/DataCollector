@@ -52,6 +52,7 @@
     _titleField.text=[_detailItem title];
     _autherField.text=[_detailItem author];
     _contentField.text=[_detailItem content];
+    _imageView.image= [_detailItem image];
 }
 
 - (void)didReceiveMemoryWarning {

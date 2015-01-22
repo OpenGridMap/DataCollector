@@ -10,13 +10,14 @@
 
 @implementation DataIterm
 
-- (id)initWithAuthor:(NSString*)author publischDate:(NSDate*)publischDate content:(NSString*)content title:(NSString*)title{
+- (id)initWithAuthor:(NSString*)author publischDate:(NSDate*)publischDate content:(NSString*)content title:(NSString*)title image:(UIImage*) image{
     self = [super init];
     if (self) {
         _title=title;
         _author=author;
         _publischDate=publischDate;
         _content=content;
+        _image=image;
     }
     return self;
 }

@@ -31,6 +31,7 @@
 
 @implementation NewItermViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -91,8 +92,7 @@
     if (sourceType == UIImagePickerControllerSourceTypeCamera)
     {
 
-        imagePickerController.allowsEditing = YES;
-        //
+        //imagePickerController.allowsEditing = YES;
         
         /*
          The user wants to use the camera interface. Set up our custom overlay view for the camera.
@@ -103,13 +103,14 @@
          Load the overlay view from the OverlayView nib file. Self is the File's Owner for the nib file, so the overlayView outlet is set to the main view in the nib. Pass that view to the image picker controller to use as its overlay view, and set self's reference to the view to nil.
          */
 //        [[NSBundle mainBundle] loadNibNamed:@"OverlayView" owner:self options:nil];
+//    
 //        self.overlayView.frame = imagePickerController.cameraOverlayView.frame;
 //        imagePickerController.cameraOverlayView = self.overlayView;
 //        self.overlayView = nil;
     }
     
     self.imagePickerController = imagePickerController;
-    [self presentViewController:self.imagePickerController animated:YES completion:NULL];
+    [self presentViewController:self.imagePickerController animated:YES completion:nil];
 }
 
 
@@ -223,9 +224,10 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
-    
+    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
     [self.capturedImages addObject:image];
-    self.imageView.image = image;
+    self.imageView.image = editedImage;
     if ([self.cameraTimer isValid])
     {
         return;
@@ -241,14 +243,6 @@
 }
 
 
-//http://stackoverflow.com/questions/15296065/ios-tabbarviewcontroller-hide-the-tab-bar
-
-
-
-#pragma mark - Overriden UIViewController methods
-- (BOOL)hidesBottomBarWhenPushed {
-    return YES;
-}
 
 
 #pragma mark - Navigation
@@ -259,10 +253,10 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-- (IBAction)goBack:(id)sender
-{
-    [self.navigationController popViewControllerAnimated:YES];
+//http://stackoverflow.com/questions/15296065/ios-tabbarviewcontroller-hide-the-tab-bar
+#pragma mark - Overriden UIViewController methods
+- (BOOL)hidesBottomBarWhenPushed {
+    return YES;
 }
 
 @end

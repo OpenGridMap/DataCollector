@@ -18,7 +18,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zfe-oJ-Fbm">
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="zfe-oJ-Fbm">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                     <items>
                         <barButtonItem title="Done" id="Scl-7F-6Hr">
@@ -47,18 +47,19 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="zfe-oJ-Fbm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1sd-bO-RXA"/>
-                <constraint firstAttribute="trailing" secondItem="zfe-oJ-Fbm" secondAttribute="trailing" id="7qU-1T-00T"/>
-                <constraint firstAttribute="bottom" secondItem="zfe-oJ-Fbm" secondAttribute="bottom" constant="60" id="HVX-MQ-NOa"/>
+                <constraint firstAttribute="trailing" secondItem="zfe-oJ-Fbm" secondAttribute="trailing" id="57q-Fd-tcC"/>
+                <constraint firstItem="zfe-oJ-Fbm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="k5A-6g-X90"/>
+                <constraint firstAttribute="bottom" secondItem="zfe-oJ-Fbm" secondAttribute="bottom" id="mKe-c4-Qck"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="zfe-oJ-Fbm"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="1sd-bO-RXA"/>
-                    <exclude reference="7qU-1T-00T"/>
-                    <exclude reference="HVX-MQ-NOa"/>
+                    <exclude reference="57q-Fd-tcC"/>
+                    <exclude reference="k5A-6g-X90"/>
+                    <exclude reference="mKe-c4-Qck"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -66,9 +67,9 @@
                     <include reference="zfe-oJ-Fbm"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="1sd-bO-RXA"/>
-                    <include reference="7qU-1T-00T"/>
-                    <include reference="HVX-MQ-NOa"/>
+                    <include reference="57q-Fd-tcC"/>
+                    <include reference="k5A-6g-X90"/>
+                    <include reference="mKe-c4-Qck"/>
                 </mask>
             </variation>
         </view>

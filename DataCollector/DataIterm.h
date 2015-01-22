@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface DataIterm : NSObject
 
@@ -15,9 +16,11 @@
 @property (strong, nonatomic) NSDate* publischDate;
 @property (strong, nonatomic) NSString* title;
 @property (strong, nonatomic) NSString* content;
+@property (strong, nonatomic) UIImage* image;
+
 
 @property (strong, nonatomic) NSSet* comments;
 
-- (id)initWithAuthor:(NSString*)author publischDate:(NSDate*)publischDate content:(NSString*)content title:(NSString*)title;
+- (id)initWithAuthor:(NSString*)author publischDate:(NSDate*)publischDate content:(NSString*)content title:(NSString*)title image:(UIImage*) image;
 
 @end

@@ -21,6 +21,9 @@
 		9F94271E1A49AEE600BE4D89 /* NewItermViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F94271D1A49AEE600BE4D89 /* NewItermViewController.m */; };
 		9F9427211A49B20800BE4D89 /* DetailedItermViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9427201A49B20800BE4D89 /* DetailedItermViewController.m */; };
 		9FAEFB181A2A84C10017DDD5 /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAEFB171A2A84C10017DDD5 /* MyProfileViewController.m */; };
+		9FBA41561A6E9A3300D6FF42 /* hamburger.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FBA41551A6E9A3300D6FF42 /* hamburger.jpg */; };
+		9FBA415A1A6E9C6000D6FF42 /* paper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FBA41581A6E9C6000D6FF42 /* paper.jpg */; };
+		9FBA415B1A6E9C6000D6FF42 /* superMari.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FBA41591A6E9C6000D6FF42 /* superMari.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		9F9427201A49B20800BE4D89 /* DetailedItermViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedItermViewController.m; sourceTree = "<group>"; };
 		9FAEFB171A2A84C10017DDD5 /* MyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
 		9FAEFB191A2A84F30017DDD5 /* MyProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
+		9FBA41551A6E9A3300D6FF42 /* hamburger.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hamburger.jpg; sourceTree = "<group>"; };
+		9FBA41581A6E9C6000D6FF42 /* paper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paper.jpg; sourceTree = "<group>"; };
+		9FBA41591A6E9C6000D6FF42 /* superMari.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = superMari.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +121,6 @@
 				9F36A5951A2A6F2E008B65A5 /* LaunchScreen.xib */,
 				9F36A5831A2A6F2E008B65A5 /* Supporting Files */,
 			);
-			name = DataCollector;
 			path = DataCollector;
 			sourceTree = "<group>";
 		};
@@ -133,7 +138,6 @@
 			children = (
 				9F36A5A01A2A6F2E008B65A5 /* Supporting Files */,
 			);
-			name = DataCollectorTests;
 			path = DataCollectorTests;
 			sourceTree = "<group>";
 		};
@@ -160,6 +164,7 @@
 		9F94271B1A49AE9F00BE4D89 /* DataView */ = {
 			isa = PBXGroup;
 			children = (
+				9FBA41571A6E9C3B00D6FF42 /* images */,
 				9F36A58A1A2A6F2E008B65A5 /* FirstViewController.h */,
 				9F36A58B1A2A6F2E008B65A5 /* FirstViewController.m */,
 				9F94271C1A49AEE600BE4D89 /* NewItermViewController.h */,
@@ -169,6 +174,16 @@
 				9F658A781A681B7200B92428 /* OverlayView.xib */,
 			);
 			name = DataView;
+			sourceTree = "<group>";
+		};
+		9FBA41571A6E9C3B00D6FF42 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				9FBA41551A6E9A3300D6FF42 /* hamburger.jpg */,
+				9FBA41581A6E9C6000D6FF42 /* paper.jpg */,
+				9FBA41591A6E9C6000D6FF42 /* superMari.jpg */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,10 +266,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FBA415B1A6E9C6000D6FF42 /* superMari.jpg in Resources */,
 				9F36A5921A2A6F2E008B65A5 /* Main.storyboard in Resources */,
 				9F658A791A681B7200B92428 /* OverlayView.xib in Resources */,
+				9FBA415A1A6E9C6000D6FF42 /* paper.jpg in Resources */,
 				9F36A5971A2A6F2E008B65A5 /* LaunchScreen.xib in Resources */,
 				9F36A5941A2A6F2E008B65A5 /* Images.xcassets in Resources */,
+				9FBA41561A6E9A3300D6FF42 /* hamburger.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
