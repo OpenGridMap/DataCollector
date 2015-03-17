@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F0BA49E1AB83B4D00B6E086 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0BA49D1AB83B4D00B6E086 /* MapKit.framework */; };
+		9F0BA4A01AB83B5E00B6E086 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0BA49F1AB83B5E00B6E086 /* CoreLocation.framework */; };
+		9F0BA4A61AB83DF400B6E086 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0BA4A51AB83DF400B6E086 /* LocationViewController.m */; };
 		9F1680331A42E4DB00F7A129 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F1680311A42E4DB00F7A129 /* Model.xcdatamodeld */; };
 		9F36A5861A2A6F2E008B65A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F36A5851A2A6F2E008B65A5 /* main.m */; };
 		9F36A5891A2A6F2E008B65A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F36A5881A2A6F2E008B65A5 /* AppDelegate.m */; };
@@ -47,6 +50,10 @@
 		5E2983AF52264DDB60F36236 /* libPods-DataCollector.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DataCollector.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81C5BD27BD53A8BEE3EF53BE /* Pods-DataCollectorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataCollectorTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-DataCollectorTests/Pods-DataCollectorTests.release.xcconfig"; sourceTree = "<group>"; };
 		8ED9033436B28CAFD760FC0B /* Pods-DataCollectorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataCollectorTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-DataCollectorTests/Pods-DataCollectorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9F0BA49D1AB83B4D00B6E086 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9F0BA49F1AB83B5E00B6E086 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9F0BA4A41AB83DF400B6E086 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
+		9F0BA4A51AB83DF400B6E086 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 		9F1680321A42E4DB00F7A129 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		9F36A5801A2A6F2E008B65A5 /* DataCollector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataCollector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F36A5841A2A6F2E008B65A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,6 +95,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F0BA4A01AB83B5E00B6E086 /* CoreLocation.framework in Frameworks */,
+				9F0BA49E1AB83B4D00B6E086 /* MapKit.framework in Frameworks */,
 				ED4BDEF038818B9F5B1E1D86 /* libPods-DataCollector.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,6 +115,8 @@
 		3E15097211BC9064841B639A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9F0BA49F1AB83B5E00B6E086 /* CoreLocation.framework */,
+				9F0BA49D1AB83B4D00B6E086 /* MapKit.framework */,
 				5E2983AF52264DDB60F36236 /* libPods-DataCollector.a */,
 				2AEFFA47876BB3F883146691 /* libPods-DataCollectorTests.a */,
 			);
@@ -121,6 +132,15 @@
 				81C5BD27BD53A8BEE3EF53BE /* Pods-DataCollectorTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9F0BA4A31AB83D9F00B6E086 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				9F0BA4A41AB83DF400B6E086 /* LocationViewController.h */,
+				9F0BA4A51AB83DF400B6E086 /* LocationViewController.m */,
+			);
+			name = MapView;
 			sourceTree = "<group>";
 		};
 		9F36A5771A2A6F2E008B65A5 = {
@@ -147,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				9FE6E7291A71500C00DBEA5D /* Networking */,
+				9F0BA4A31AB83D9F00B6E086 /* MapView */,
 				9F94271B1A49AE9F00BE4D89 /* DataView */,
 				9F8044061A406F7300A4AEE8 /* Model */,
 				9F36A5871A2A6F2E008B65A5 /* AppDelegate.h */,
@@ -414,6 +435,7 @@
 				9F36A5891A2A6F2E008B65A5 /* AppDelegate.m in Sources */,
 				9F80440A1A4071B000A4AEE8 /* User.m in Sources */,
 				9F94271E1A49AEE600BE4D89 /* NewItermViewController.m in Sources */,
+				9F0BA4A61AB83DF400B6E086 /* LocationViewController.m in Sources */,
 				9F1680331A42E4DB00F7A129 /* Model.xcdatamodeld in Sources */,
 				9FAEFB181A2A84C10017DDD5 /* MyProfileViewController.m in Sources */,
 				9F9427211A49B20800BE4D89 /* DetailedItermViewController.m in Sources */,
