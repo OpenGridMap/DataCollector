@@ -1,13 +1,16 @@
 //
-//  NewDiscusstionViewController.h
+//  NewItermViewController.h
 //  DataCollector
 //
-//  Created by allen on 23/12/14.
-//  Copyright (c) 2014 allen. All rights reserved.
+//  Created by allen on 19/03/15.
+//  Copyright (c) 2015 allen. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import "XLForm.h"
+#import "XLFormViewController.h"
 
-@interface NewItermViewController : UIViewController < UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+//@interface SelectorsFormViewController : XLFormViewController
+@interface NewItermViewController : XLFormViewController
 
 @end

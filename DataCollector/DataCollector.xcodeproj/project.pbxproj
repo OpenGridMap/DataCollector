@@ -14,14 +14,15 @@
 		9F36A5861A2A6F2E008B65A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F36A5851A2A6F2E008B65A5 /* main.m */; };
 		9F36A5891A2A6F2E008B65A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F36A5881A2A6F2E008B65A5 /* AppDelegate.m */; };
 		9F36A58C1A2A6F2E008B65A5 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F36A58B1A2A6F2E008B65A5 /* FirstViewController.m */; };
-		9F36A58F1A2A6F2E008B65A5 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F36A58E1A2A6F2E008B65A5 /* SecondViewController.m */; };
 		9F36A5921A2A6F2E008B65A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F36A5901A2A6F2E008B65A5 /* Main.storyboard */; };
 		9F36A5941A2A6F2E008B65A5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F36A5931A2A6F2E008B65A5 /* Images.xcassets */; };
 		9F36A5971A2A6F2E008B65A5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F36A5951A2A6F2E008B65A5 /* LaunchScreen.xib */; };
+		9F42B7701ABAE15500720DEF /* NewItermViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F42B76F1ABAE15500720DEF /* NewItermViewController.m */; };
+		9F42B7731ABAE5A900720DEF /* CLLocationValueTrasformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F42B7721ABAE5A900720DEF /* CLLocationValueTrasformer.m */; };
 		9F658A791A681B7200B92428 /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F658A781A681B7200B92428 /* OverlayView.xib */; };
 		9F80440A1A4071B000A4AEE8 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8044091A4071B000A4AEE8 /* User.m */; };
 		9F8CE62D1A447CAB00C5257E /* DataIterm.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8CE62C1A447CAB00C5257E /* DataIterm.m */; };
-		9F94271E1A49AEE600BE4D89 /* NewItermViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F94271D1A49AEE600BE4D89 /* NewItermViewController.m */; };
+		9F94271E1A49AEE600BE4D89 /* NewImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F94271D1A49AEE600BE4D89 /* NewImageViewController.m */; };
 		9F9427211A49B20800BE4D89 /* DetailedItermViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9427201A49B20800BE4D89 /* DetailedItermViewController.m */; };
 		9FAEFB181A2A84C10017DDD5 /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAEFB171A2A84C10017DDD5 /* MyProfileViewController.m */; };
 		9FBA41561A6E9A3300D6FF42 /* hamburger.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FBA41551A6E9A3300D6FF42 /* hamburger.jpg */; };
@@ -62,21 +63,23 @@
 		9F36A5881A2A6F2E008B65A5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9F36A58A1A2A6F2E008B65A5 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		9F36A58B1A2A6F2E008B65A5 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		9F36A58D1A2A6F2E008B65A5 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		9F36A58E1A2A6F2E008B65A5 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		9F36A5911A2A6F2E008B65A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F36A5931A2A6F2E008B65A5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9F36A5961A2A6F2E008B65A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9F36A59C1A2A6F2E008B65A5 /* DataCollectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataCollectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F36A5A11A2A6F2E008B65A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F42B76E1ABAE15500720DEF /* NewItermViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewItermViewController.h; sourceTree = "<group>"; };
+		9F42B76F1ABAE15500720DEF /* NewItermViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewItermViewController.m; sourceTree = "<group>"; };
+		9F42B7711ABAE5A900720DEF /* CLLocationValueTrasformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLLocationValueTrasformer.h; sourceTree = "<group>"; };
+		9F42B7721ABAE5A900720DEF /* CLLocationValueTrasformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLLocationValueTrasformer.m; sourceTree = "<group>"; };
 		9F6095971A408C6600E4D941 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		9F658A781A681B7200B92428 /* OverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverlayView.xib; sourceTree = "<group>"; };
 		9F8044081A4071B000A4AEE8 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		9F8044091A4071B000A4AEE8 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		9F8CE62B1A447CAB00C5257E /* DataIterm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataIterm.h; sourceTree = "<group>"; };
 		9F8CE62C1A447CAB00C5257E /* DataIterm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataIterm.m; sourceTree = "<group>"; };
-		9F94271C1A49AEE600BE4D89 /* NewItermViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewItermViewController.h; sourceTree = "<group>"; };
-		9F94271D1A49AEE600BE4D89 /* NewItermViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewItermViewController.m; sourceTree = "<group>"; };
+		9F94271C1A49AEE600BE4D89 /* NewImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewImageViewController.h; sourceTree = "<group>"; };
+		9F94271D1A49AEE600BE4D89 /* NewImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewImageViewController.m; sourceTree = "<group>"; };
 		9F94271F1A49B20800BE4D89 /* DetailedItermViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedItermViewController.h; sourceTree = "<group>"; };
 		9F9427201A49B20800BE4D89 /* DetailedItermViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedItermViewController.m; sourceTree = "<group>"; };
 		9FAEFB171A2A84C10017DDD5 /* MyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
@@ -143,6 +146,28 @@
 			name = MapView;
 			sourceTree = "<group>";
 		};
+		9F17DFA01ABADF22000B9491 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				9FAEFB191A2A84F30017DDD5 /* MyProfileViewController.h */,
+				9FAEFB171A2A84C10017DDD5 /* MyProfileViewController.m */,
+			);
+			name = Me;
+			sourceTree = "<group>";
+		};
+		9F17DFA11ABADFA9000B9491 /* WorkFlow */ = {
+			isa = PBXGroup;
+			children = (
+				9F94271C1A49AEE600BE4D89 /* NewImageViewController.h */,
+				9F94271D1A49AEE600BE4D89 /* NewImageViewController.m */,
+				9F42B76E1ABAE15500720DEF /* NewItermViewController.h */,
+				9F42B76F1ABAE15500720DEF /* NewItermViewController.m */,
+				9F42B7711ABAE5A900720DEF /* CLLocationValueTrasformer.h */,
+				9F42B7721ABAE5A900720DEF /* CLLocationValueTrasformer.m */,
+			);
+			name = WorkFlow;
+			sourceTree = "<group>";
+		};
 		9F36A5771A2A6F2E008B65A5 = {
 			isa = PBXGroup;
 			children = (
@@ -167,15 +192,13 @@
 			isa = PBXGroup;
 			children = (
 				9FE6E7291A71500C00DBEA5D /* Networking */,
-				9F0BA4A31AB83D9F00B6E086 /* MapView */,
 				9F94271B1A49AE9F00BE4D89 /* DataView */,
+				9F17DFA11ABADFA9000B9491 /* WorkFlow */,
+				9F0BA4A31AB83D9F00B6E086 /* MapView */,
+				9F17DFA01ABADF22000B9491 /* Me */,
 				9F8044061A406F7300A4AEE8 /* Model */,
 				9F36A5871A2A6F2E008B65A5 /* AppDelegate.h */,
 				9F36A5881A2A6F2E008B65A5 /* AppDelegate.m */,
-				9F36A58D1A2A6F2E008B65A5 /* SecondViewController.h */,
-				9F36A58E1A2A6F2E008B65A5 /* SecondViewController.m */,
-				9FAEFB191A2A84F30017DDD5 /* MyProfileViewController.h */,
-				9FAEFB171A2A84C10017DDD5 /* MyProfileViewController.m */,
 				9F36A5901A2A6F2E008B65A5 /* Main.storyboard */,
 				9F36A5931A2A6F2E008B65A5 /* Images.xcassets */,
 				9F36A5951A2A6F2E008B65A5 /* LaunchScreen.xib */,
@@ -227,8 +250,6 @@
 				9FBA41571A6E9C3B00D6FF42 /* images */,
 				9F36A58A1A2A6F2E008B65A5 /* FirstViewController.h */,
 				9F36A58B1A2A6F2E008B65A5 /* FirstViewController.m */,
-				9F94271C1A49AEE600BE4D89 /* NewItermViewController.h */,
-				9F94271D1A49AEE600BE4D89 /* NewItermViewController.m */,
 				9F94271F1A49B20800BE4D89 /* DetailedItermViewController.h */,
 				9F9427201A49B20800BE4D89 /* DetailedItermViewController.m */,
 				9F658A781A681B7200B92428 /* OverlayView.xib */,
@@ -430,16 +451,17 @@
 			files = (
 				9F8CE62D1A447CAB00C5257E /* DataIterm.m in Sources */,
 				9FE6E72C1A71509C00DBEA5D /* ConnectionHandler.m in Sources */,
-				9F36A58F1A2A6F2E008B65A5 /* SecondViewController.m in Sources */,
 				9FE6E72F1A7150B400DBEA5D /* MappingProvider.m in Sources */,
 				9F36A5891A2A6F2E008B65A5 /* AppDelegate.m in Sources */,
 				9F80440A1A4071B000A4AEE8 /* User.m in Sources */,
-				9F94271E1A49AEE600BE4D89 /* NewItermViewController.m in Sources */,
+				9F94271E1A49AEE600BE4D89 /* NewImageViewController.m in Sources */,
 				9F0BA4A61AB83DF400B6E086 /* LocationViewController.m in Sources */,
 				9F1680331A42E4DB00F7A129 /* Model.xcdatamodeld in Sources */,
+				9F42B7731ABAE5A900720DEF /* CLLocationValueTrasformer.m in Sources */,
 				9FAEFB181A2A84C10017DDD5 /* MyProfileViewController.m in Sources */,
 				9F9427211A49B20800BE4D89 /* DetailedItermViewController.m in Sources */,
 				9F36A58C1A2A6F2E008B65A5 /* FirstViewController.m in Sources */,
+				9F42B7701ABAE15500720DEF /* NewItermViewController.m in Sources */,
 				9F36A5861A2A6F2E008B65A5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,56 +1,424 @@
 //
-//  NewDiscusstionViewController.m
+//  NewItermViewController.m
 //  DataCollector
 //
-//  Created by allen on 23/12/14.
-//  Copyright (c) 2014 allen. All rights reserved.
+//  Created by allen on 19/03/15.
+//  Copyright (c) 2015 allen. All rights reserved.
 //
-
+#import <MapKit/MapKit.h>
 #import "NewItermViewController.h"
+#import "CLLocationValueTrasformer.h"
+//#import "CustomSelectorsFormViewController.h"
+//#import "DynamicSelectorsFormViewController.h"
+
+NSString *const kSelectorPush = @"selectorPush";
+NSString *const kSelectorPopover = @"selectorPopover";
+NSString *const kSelectorActionSheet = @"selectorActionSheet";
+NSString *const kSelectorAlertView = @"selectorAlertView";
+NSString *const kSelectorLeftRight = @"selectorLeftRight";
+NSString *const kSelectorPushDisabled = @"selectorPushDisabled";
+NSString *const kSelectorActionSheetDisabled = @"selectorActionSheetDisabled";
+NSString *const kSelectorLeftRightDisabled = @"selectorLeftRightDisabled";
+NSString *const kSelectorPickerView = @"selectorPickerView";
+NSString *const kSelectorPickerViewInline = @"selectorPickerViewInline";
+NSString *const kMultipleSelector = @"multipleSelector";
+NSString *const kMultipleSelectorPopover = @"multipleSelectorPopover";
+NSString *const kDynamicSelectors = @"dynamicSelectors";
+NSString *const kCustomSelectors = @"customSelectors";
+NSString *const kPickerView = @"pickerView";
+NSString *const kSelectorWithSegueId = @"selectorWithSegueId";
+NSString *const kSelectorWithSegueClass = @"selectorWithSegueClass";
+NSString *const kSelectorWithNibName = @"selectorWithNibName";
+NSString *const kSelectorWithStoryboardId = @"selectorWithStoryboardId";
+NSString *const XLFormRowDescriptorTypeSelectorPickerViewInline = @"selectorPickerViewInline";
 
 @interface NewItermViewController ()
+@end
 
 
-@property (nonatomic, weak) IBOutlet UIImageView *imageView;
 
-@property (nonatomic, weak) IBOutlet UIToolbar *toolBar;
+#pragma mark - NSValueTransformer
 
-@property (nonatomic) IBOutlet UIView *overlayView;
-@property (nonatomic, weak) IBOutlet UIBarButtonItem *takePictureButton;
-@property (nonatomic, weak) IBOutlet UIBarButtonItem *startStopButton;
-@property (nonatomic, weak) IBOutlet UIBarButtonItem *delayedPhotoButton;
-@property (nonatomic, weak) IBOutlet UIBarButtonItem *doneButton;
+@interface NSArrayValueTrasformer : NSValueTransformer
+@end
 
-@property (nonatomic) UIImagePickerController *imagePickerController;
+@implementation NSArrayValueTrasformer
 
-@property (nonatomic, weak) NSTimer *cameraTimer;
-@property (nonatomic) NSMutableArray *capturedImages;
++ (Class)transformedValueClass
+{
+    return [NSString class];
+}
 
++ (BOOL)allowsReverseTransformation
+{
+    return NO;
+}
+
+- (id)transformedValue:(id)value
+{
+    if (!value) return nil;
+    if ([value isKindOfClass:[NSArray class]]){
+        NSArray * array = (NSArray *)value;
+        return [NSString stringWithFormat:@"%@ Item%@", @(array.count), array.count > 1 ? @"s" : @""];
+    }
+    if ([value isKindOfClass:[NSString class]])
+    {
+        return [NSString stringWithFormat:@"%@ - ;) - Transformed", value];
+    }
+    return nil;
+}
 
 @end
 
+
+@interface ISOLanguageCodesValueTranformer : NSValueTransformer
+@end
+
+@implementation ISOLanguageCodesValueTranformer
+
++ (Class)transformedValueClass
+{
+    return [NSString class];
+}
+
++ (BOOL)allowsReverseTransformation
+{
+    return NO;
+}
+
+- (id)transformedValue:(id)value
+{
+    if (!value) return nil;
+    if ([value isKindOfClass:[NSString class]]){
+        return [[NSLocale currentLocale] displayNameForKey:NSLocaleLanguageCode value:value];
+    }
+    return nil;
+}
+
+@end
+
+
+
+
 @implementation NewItermViewController
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        [self initializeForm];
+    }
+    return self;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self initializeForm];
+    }
+    return self;
+}
+
+- (void)initializeForm
+{
+    XLFormDescriptor * form = [XLFormDescriptor formDescriptorWithTitle:@"Selectors"];
+    XLFormSectionDescriptor * section;
+    XLFormRowDescriptor * row;
+    
+    // Basic Information
+    section = [XLFormSectionDescriptor formSectionWithTitle:@"Selectors"];
+    section.footerTitle = @"SelectorsFormViewController.h";
+    [form addFormSection:section];
+    
+    
+    // Selector Push
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kSelectorPush rowType:XLFormRowDescriptorTypeSelectorPush title:@"Push"];
+    row.selectorOptions = @[[XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"Option 1"],
+                            [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Option 2"],
+                            [XLFormOptionsObject formOptionsObjectWithValue:@(2) displayText:@"Option 3"],
+                            [XLFormOptionsObject formOptionsObjectWithValue:@(3) displayText:@"Option 4"],
+                            [XLFormOptionsObject formOptionsObjectWithValue:@(4) displayText:@"Option 5"]
+                            ];
+    row.value = [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Option 2"];
+    [section addFormRow:row];
+    
+    // Selector Popover
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad){
+        row = [XLFormRowDescriptor formRowDescriptorWithTag:kSelectorPopover rowType:XLFormRowDescriptorTypeSelectorPopover title:@"PopOver"];
+        row.selectorOptions = @[@"Option 1", @"Option 2", @"Option 3", @"Option 4", @"Option 5", @"Option 6"];
+        row.value = @"Option 2";
+        [section addFormRow:row];
+    }
+    
+    // Selector Action Sheet
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kSelectorActionSheet rowType:XLFormRowDescriptorTypeSelectorActionSheet title:@"Sheet"];
+    row.selectorOptions = @[[XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"Option 1"],
+                            [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Option 2"],
+                            [XLFormOptionsObject formOptionsObjectWithValue:@(2) displayText:@"Option 3"],
+                            [XLFormOptionsObject formOptionsObjectWithValue:@(3) displayText:@"Option 4"],
+                            [XLFormOptionsObject formOptionsObjectWithValue:@(4) displayText:@"Option 5"]
+                            ];
+    row.value = [XLFormOptionsObject formOptionsObjectWithValue:@(2) displayText:@"Option 3"];
+    [section addFormRow:row];
+    
+    
+    
+    
+    // Selector Alert View
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kSelectorAlertView rowType:XLFormRowDescriptorTypeSelectorAlertView title:@"Alert View"];
+    row.selectorOptions = @[[XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"Option 1"],
+                            [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Option 2"],
+                            [XLFormOptionsObject formOptionsObjectWithValue:@(2) displayText:@"Option 3"],
+                            [XLFormOptionsObject formOptionsObjectWithValue:@(3) displayText:@"Option 4"],
+                            [XLFormOptionsObject formOptionsObjectWithValue:@(4) displayText:@"Option 5"]
+                            ];
+    row.value = [XLFormOptionsObject formOptionsObjectWithValue:@(2) displayText:@"Option 3"];
+    [section addFormRow:row];
+    
+    
+    
+    // Selector Left Right
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kSelectorLeftRight rowType:XLFormRowDescriptorTypeSelectorLeftRight title:@"Left Right"];
+    row.leftRightSelectorLeftOptionSelected = [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Option 2"];
+    
+    NSArray * rightOptions =  @[[XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"Right Option 1"],
+                                [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Right Option 2"],
+                                [XLFormOptionsObject formOptionsObjectWithValue:@(2) displayText:@"Right Option 3"],
+                                [XLFormOptionsObject formOptionsObjectWithValue:@(3) displayText:@"Right Option 4"],
+                                [XLFormOptionsObject formOptionsObjectWithValue:@(4) displayText:@"Right Option 5"]
+                                ];
+    
+    // create right selectors
+    NSMutableArray * leftRightSelectorOptions = [[NSMutableArray alloc] init];
+    NSMutableArray * mutableRightOptions = [rightOptions mutableCopy];
+    [mutableRightOptions removeObjectAtIndex:0];
+    XLFormLeftRightSelectorOption * leftRightSelectorOption = [XLFormLeftRightSelectorOption formLeftRightSelectorOptionWithLeftValue:[XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"Option 1"] httpParameterKey:@"option_1" rightOptions:mutableRightOptions];
+    [leftRightSelectorOptions addObject:leftRightSelectorOption];
+    
+    mutableRightOptions = [rightOptions mutableCopy];
+    [mutableRightOptions removeObjectAtIndex:1];
+    leftRightSelectorOption = [XLFormLeftRightSelectorOption formLeftRightSelectorOptionWithLeftValue:[XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Option 2"] httpParameterKey:@"option_2" rightOptions:mutableRightOptions];
+    [leftRightSelectorOptions addObject:leftRightSelectorOption];
+    
+    mutableRightOptions = [rightOptions mutableCopy];
+    [mutableRightOptions removeObjectAtIndex:2];
+    leftRightSelectorOption = [XLFormLeftRightSelectorOption formLeftRightSelectorOptionWithLeftValue:[XLFormOptionsObject formOptionsObjectWithValue:@(2) displayText:@"Option 3"]  httpParameterKey:@"option_3" rightOptions:mutableRightOptions];
+    [leftRightSelectorOptions addObject:leftRightSelectorOption];
+    
+    mutableRightOptions = [rightOptions mutableCopy];
+    [mutableRightOptions removeObjectAtIndex:3];
+    leftRightSelectorOption = [XLFormLeftRightSelectorOption formLeftRightSelectorOptionWithLeftValue:[XLFormOptionsObject formOptionsObjectWithValue:@(3) displayText:@"Option 4"] httpParameterKey:@"option_4" rightOptions:mutableRightOptions];
+    [leftRightSelectorOptions addObject:leftRightSelectorOption];
+    
+    mutableRightOptions = [rightOptions mutableCopy];
+    [mutableRightOptions removeObjectAtIndex:4];
+    leftRightSelectorOption = [XLFormLeftRightSelectorOption formLeftRightSelectorOptionWithLeftValue:[XLFormOptionsObject formOptionsObjectWithValue:@(4) displayText:@"Option 5"] httpParameterKey:@"option_5" rightOptions:mutableRightOptions];
+    [leftRightSelectorOptions addObject:leftRightSelectorOption];
+    
+    row.selectorOptions  = leftRightSelectorOptions;
+    row.value = [XLFormOptionsObject formOptionsObjectWithValue:@(3) displayText:@"Right Option 4"];
+    [section addFormRow:row];
+    
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kSelectorPickerView rowType:XLFormRowDescriptorTypeSelectorPickerView title:@"Picker View"];
+    row.selectorOptions = @[[XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"Option 1"],
+                            [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Option 2"],
+                            [XLFormOptionsObject formOptionsObjectWithValue:@(2) displayText:@"Option 3"],
+                            [XLFormOptionsObject formOptionsObjectWithValue:@(3) displayText:@"Option 4"],
+                            [XLFormOptionsObject formOptionsObjectWithValue:@(4) displayText:@"Option 5"]
+                            ];
+    row.value = [XLFormOptionsObject formOptionsObjectWithValue:@(3) displayText:@"Option 4"];
+    [section addFormRow:row];
+    
+    
+    
+    // --------- Fixed Controls
+    
+    section = [XLFormSectionDescriptor formSectionWithTitle:@"Fixed Controls"];
+    [form addFormSection:section];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kPickerView rowType:XLFormRowDescriptorTypePicker];
+    row.selectorOptions = @[@"Option 1", @"Option 2", @"Option 3", @"Option 4", @"Option 5", @"Option 6"];
+    row.value = @"Option 1";
+    [section addFormRow:row];
+    
+    
+    
+    // --------- Inline Selectors
+    
+    section = [XLFormSectionDescriptor formSectionWithTitle:@"Inline Selectors"];
+    [form addFormSection:section];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kMultipleSelector rowType:XLFormRowDescriptorTypeSelectorPickerViewInline title:@"Inline Picker View"];
+    row.selectorOptions = @[@"Option 1", @"Option 2", @"Option 3", @"Option 4", @"Option 5", @"Option 6"];
+    row.value = @"Option 6";
+    [section addFormRow:row];
+    
+    // --------- MultipleSelector
+    
+    section = [XLFormSectionDescriptor formSectionWithTitle:@"Multiple Selectors"];
+    [form addFormSection:section];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kMultipleSelector rowType:XLFormRowDescriptorTypeMultipleSelector title:@"Multiple Selector"];
+    row.selectorOptions = @[@"Option 1", @"Option 2", @"Option 3", @"Option 4", @"Option 5", @"Option 6"];
+    row.value = @[@"Option 1", @"Option 3", @"Option 4", @"Option 5", @"Option 6"];
+    [section addFormRow:row];
+    
+    
+    // Multiple selector with value tranformer
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kMultipleSelector rowType:XLFormRowDescriptorTypeMultipleSelector title:@"Multiple Selector"];
+    row.selectorOptions = @[@"Option 1", @"Option 2", @"Option 3", @"Option 4", @"Option 5", @"Option 6"];
+    row.value = @[@"Option 1", @"Option 3", @"Option 4", @"Option 5", @"Option 6"];
+    row.valueTransformer = [NSArrayValueTrasformer class];
+    [section addFormRow:row];
+    
+    
+    // Language multiple selector
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kMultipleSelector rowType:XLFormRowDescriptorTypeMultipleSelector title:@"Multiple Selector"];
+    row.selectorOptions = [NSLocale ISOLanguageCodes];
+    row.selectorTitle = @"Languages";
+    row.valueTransformer = [ISOLanguageCodesValueTranformer class];
+    row.value = [NSLocale preferredLanguages];
+    [section addFormRow:row];
+    
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad){
+        // Language multiple selector popover
+        row = [XLFormRowDescriptor formRowDescriptorWithTag:kMultipleSelectorPopover rowType:XLFormRowDescriptorTypeMultipleSelectorPopover title:@"Multiple Selector PopOver"];
+        row.selectorOptions = [NSLocale ISOLanguageCodes];
+        row.valueTransformer = [ISOLanguageCodesValueTranformer class];
+        row.value = [NSLocale preferredLanguages];
+        [section addFormRow:row];
+    }
+    
+    
+    // --------- Dynamic Selectors
+    
+//    section = [XLFormSectionDescriptor formSectionWithTitle:@"Dynamic Selectors"];
+//    [form addFormSection:section];
+//    row = [XLFormRowDescriptor formRowDescriptorWithTag:kDynamicSelectors rowType:XLFormRowDescriptorTypeButton title:@"Dynamic Selectors"];
+//    row.action.viewControllerClass = [DynamicSelectorsFormViewController class];
+//    [section addFormRow:row];
+//    
+//    // --------- Custom Selectors
+//    
+//    section = [XLFormSectionDescriptor formSectionWithTitle:@"Custom Selectors"];
+//    [form addFormSection:section];
+//    row = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomSelectors rowType:XLFormRowDescriptorTypeButton title:@"Custom Selectors"];
+//    row.action.viewControllerClass = [CustomSelectorsFormViewController class];
+//    [section addFormRow:row];
+//    
+//    section = [XLFormSectionDescriptor formSectionWithTitle:@"Disabled & Required Selectors"];
+//    [form addFormSection:section];
+    
+    
+    
+    // Disabled Selector Push
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kSelectorPushDisabled rowType:XLFormRowDescriptorTypeSelectorPush title:@"Push"];
+    row.value = [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Option 2"];
+    row.disabled = YES;
+    [section addFormRow:row];
+    
+    
+    
+    // --------- Disabled Selector Action Sheet
+    
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kSelectorActionSheetDisabled rowType:XLFormRowDescriptorTypeSelectorActionSheet title:@"Sheet"];
+    row.value = [XLFormOptionsObject formOptionsObjectWithValue:@(2) displayText:@"Option 3"];
+    row.disabled = YES;
+    [section addFormRow:row];
+    
+    // --------- Disabled Selector Left Right
+    
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kSelectorLeftRightDisabled rowType:XLFormRowDescriptorTypeSelectorLeftRight title:@"Left Right"];
+    row.leftRightSelectorLeftOptionSelected = [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Option 2"];
+    row.value = [XLFormOptionsObject formOptionsObjectWithValue:@(3) displayText:@"Right Option 4"];
+    row.disabled = YES;
+    [section addFormRow:row];
+    
+    
+    // --------- Selector definition types
+    
+//    section = [XLFormSectionDescriptor formSectionWithTitle:@"Selectors"];
+//    [form addFormSection:section];
+//    
+//    // selector with segue class
+//    row = [XLFormRowDescriptor formRowDescriptorWithTag:kSelectorWithSegueClass rowType:XLFormRowDescriptorTypeSelectorPush title:@"Selector with Segue Class"];
+//    row.action.formSegueClass = NSClassFromString(@"UIStoryboardPushSegue");
+//    row.action.viewControllerClass = [MapViewController class];
+//    row.valueTransformer = [CLLocationValueTrasformer class];
+//    row.value = [[CLLocation alloc] initWithLatitude:-33 longitude:-56];
+//    [section addFormRow:row];
+//    
+//    // selector with SegueId
+//    row = [XLFormRowDescriptor formRowDescriptorWithTag:kSelectorWithSegueClass rowType:XLFormRowDescriptorTypeSelectorPush title:@"Selector with Segue Idenfifier"];
+//    row.action.formSegueIdenfifier = @"MapViewControllerSegue";
+//    row.valueTransformer = [CLLocationValueTrasformer class];
+//    row.value = [[CLLocation alloc] initWithLatitude:-33 longitude:-56];
+//    [section addFormRow:row];
+//    
+//    // selector using StoryboardId
+//    row = [XLFormRowDescriptor formRowDescriptorWithTag:kSelectorWithStoryboardId rowType:XLFormRowDescriptorTypeSelectorPush title:@"Selector with StoryboardId"];
+//    row.action.viewControllerStoryboardId = @"MapViewController";
+//    row.valueTransformer = [CLLocationValueTrasformer class];
+//    row.value = [[CLLocation alloc] initWithLatitude:-33 longitude:-56];
+//    [section addFormRow:row];
+//    
+//    // selector with NibName
+//    row = [XLFormRowDescriptor formRowDescriptorWithTag:kSelectorWithNibName rowType:XLFormRowDescriptorTypeSelectorPush title:@"Selector with NibName"];
+//    row.action.viewControllerNibName = @"MapViewController";
+//    row.valueTransformer = [CLLocationValueTrasformer class];
+//    row.value = [[CLLocation alloc] initWithLatitude:-33 longitude:-56];
+//    [section addFormRow:row];
+    
+    
+    
+    self.form = form;
+}
+
+
+-(UIStoryboard *)storyboardForRow:(XLFormRowDescriptor *)formRow
+{
+    return [UIStoryboard storyboardWithName:@"iPhoneStoryboard" bundle:nil];
+}
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+//    
+//    XLFormDescriptor * form;
+//    XLFormSectionDescriptor * section;
+//    XLFormRowDescriptor * row;
+//    
+//    form = [XLFormDescriptor formDescriptorWithTitle:@"Add Event"];
+//    
+//    // First section
+//    section = [XLFormSectionDescriptor formSection];
+//    [form addFormSection:section];
+//    
+//    // Title
+//    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"title" rowType:XLFormRowDescriptorTypeText];
+//    [row.cellConfigAtConfigure setObject:@"Title" forKey:@"textField.placeholder"];
+//    [section addFormRow:row];
+//    
+//    // Location
+//    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"location" rowType:XLFormRowDescriptorTypeText];
+//    [row.cellConfigAtConfigure setObject:@"Location" forKey:@"textField.placeholder"];
+//    [section addFormRow:row];
+//    
+//    // Second Section
+//    section = [XLFormSectionDescriptor formSection];
+//    [form addFormSection:section];
+//    
+//    // All-day
+//    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"all-day" rowType:XLFormRowDescriptorTypeBooleanSwitch title:@"All-day"];
+//    [section addFormRow:row];
+//    
+//    // Starts
+//    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"starts" rowType:XLFormRowDescriptorTypeDateTimeInline title:@"Starts"];
+//    row.value = [NSDate dateWithTimeIntervalSinceNow:60*60*24];
+//    [section addFormRow:row];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-   
-    self.capturedImages = [[NSMutableArray alloc] init];
     
-    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-    {
-        // There is not a camera on this device, so don't show the camera button.
-        NSMutableArray *toolbarItems = [self.toolBar.items mutableCopy];
-        [toolbarItems removeObjectAtIndex:2];
-        [self.toolBar setItems:toolbarItems animated:NO];
-    }
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,205 +426,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
-- (IBAction)showImagePickerForCamera:(id)sender
-{
-    [self showImagePickerForSourceType:UIImagePickerControllerSourceTypeCamera];
-}
-
-
-- (IBAction)showImagePickerForPhotoPicker:(id)sender
-{
-    [self showImagePickerForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-}
-
-
-- (void)showImagePickerForSourceType:(UIImagePickerControllerSourceType)sourceType
-{
-    if (self.imageView.isAnimating)
-    {
-        [self.imageView stopAnimating];
-    }
-    
-    if (self.capturedImages.count > 0)
-    {
-        [self.capturedImages removeAllObjects];
-    }
-    
-    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
-    imagePickerController.modalPresentationStyle = UIModalPresentationCurrentContext;
-    imagePickerController.sourceType = sourceType;
-    imagePickerController.delegate = self;
-    
-    if (sourceType == UIImagePickerControllerSourceTypeCamera)
-    {
-
-        //imagePickerController.allowsEditing = YES;
-        
-        /*
-         The user wants to use the camera interface. Set up our custom overlay view for the camera.
-         */
-        imagePickerController.showsCameraControls = YES;
-        
-        /*
-         Load the overlay view from the OverlayView nib file. Self is the File's Owner for the nib file, so the overlayView outlet is set to the main view in the nib. Pass that view to the image picker controller to use as its overlay view, and set self's reference to the view to nil.
-         */
-//        [[NSBundle mainBundle] loadNibNamed:@"OverlayView" owner:self options:nil];
-//    
-//        self.overlayView.frame = imagePickerController.cameraOverlayView.frame;
-//        imagePickerController.cameraOverlayView = self.overlayView;
-//        self.overlayView = nil;
-    }
-    
-    self.imagePickerController = imagePickerController;
-    [self presentViewController:self.imagePickerController animated:YES completion:nil];
-}
-
-
-#pragma mark - Toolbar actions
-
-- (IBAction)done:(id)sender
-{
-    // Dismiss the camera.
-    if ([self.cameraTimer isValid])
-    {
-        [self.cameraTimer invalidate];
-    }
-    [self finishAndUpdate];
-}
-
-
-- (IBAction)takePhoto:(id)sender
-{
-    [self.imagePickerController takePicture];
-}
-
-
-- (IBAction)delayedTakePhoto:(id)sender
-{
-    // These controls can't be used until the photo has been taken
-    self.doneButton.enabled = NO;
-    self.takePictureButton.enabled = NO;
-    self.delayedPhotoButton.enabled = NO;
-    self.startStopButton.enabled = NO;
-    
-    NSDate *fireDate = [NSDate dateWithTimeIntervalSinceNow:5.0];
-    NSTimer *cameraTimer = [[NSTimer alloc] initWithFireDate:fireDate interval:1.0 target:self selector:@selector(timedPhotoFire:) userInfo:nil repeats:NO];
-    
-    [[NSRunLoop mainRunLoop] addTimer:cameraTimer forMode:NSDefaultRunLoopMode];
-    self.cameraTimer = cameraTimer;
-}
-
-
-- (IBAction)startTakingPicturesAtIntervals:(id)sender
-{
-    /*
-     Start the timer to take a photo every 1.5 seconds.
-     
-     CAUTION: for the purpose of this sample, we will continue to take pictures indefinitely.
-     Be aware we will run out of memory quickly.  You must decide the proper threshold number of photos allowed to take from the camera.
-     One solution to avoid memory constraints is to save each taken photo to disk rather than keeping all of them in memory.
-     In low memory situations sometimes our "didReceiveMemoryWarning" method will be called in which case we can recover some memory and keep the app running.
-     */
-    self.startStopButton.title = NSLocalizedString(@"Stop", @"Title for overlay view controller start/stop button");
-    [self.startStopButton setAction:@selector(stopTakingPicturesAtIntervals:)];
-    
-    self.doneButton.enabled = NO;
-    self.delayedPhotoButton.enabled = NO;
-    self.takePictureButton.enabled = NO;
-    
-    self.cameraTimer = [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(timedPhotoFire:) userInfo:nil repeats:YES];
-    [self.cameraTimer fire]; // Start taking pictures right away.
-}
-
-
-- (IBAction)stopTakingPicturesAtIntervals:(id)sender
-{
-    // Stop and reset the timer.
-    [self.cameraTimer invalidate];
-    self.cameraTimer = nil;
-    
-    [self finishAndUpdate];
-}
-
-
-- (void)finishAndUpdate
-{
-    [self dismissViewControllerAnimated:YES completion:NULL];
-    
-    if ([self.capturedImages count] > 0)
-    {
-        if ([self.capturedImages count] == 1)
-        {
-            // Camera took a single picture.
-            [self.imageView setImage:[self.capturedImages objectAtIndex:0]];
-        }
-        else
-        {
-            // Camera took multiple pictures; use the list of images for animation.
-            self.imageView.animationImages = self.capturedImages;
-            self.imageView.animationDuration = 5.0;    // Show each captured photo for 5 seconds.
-            self.imageView.animationRepeatCount = 0;   // Animate forever (show all photos).
-            [self.imageView startAnimating];
-        }
-        
-        // To be ready to start again, clear the captured images array.
-        [self.capturedImages removeAllObjects];
-    }
-    
-    self.imagePickerController = nil;
-}
-
-
-#pragma mark - Timer
-
-// Called by the timer to take a picture.
-- (void)timedPhotoFire:(NSTimer *)timer
-{
-    [self.imagePickerController takePicture];
-}
-
-
-#pragma mark - UIImagePickerControllerDelegate
-
-// This method is called when an image has been chosen from the library or taken from the camera.
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-    UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
-    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
-    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
-    [self.capturedImages addObject:image];
-    self.imageView.image = editedImage;
-    if ([self.cameraTimer isValid])
-    {
-        return;
-    }
-    
-    [self finishAndUpdate];
-}
-
-
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-{
-    [self dismissViewControllerAnimated:YES completion:NULL];
-}
-
-
-
-
-#pragma mark - Navigation
 /*
+#pragma mark - Navigation
+
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
 */
-//http://stackoverflow.com/questions/15296065/ios-tabbarviewcontroller-hide-the-tab-bar
-#pragma mark - Overriden UIViewController methods
-- (BOOL)hidesBottomBarWhenPushed {
-    return YES;
-}
 
 @end

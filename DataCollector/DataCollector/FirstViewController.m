@@ -8,7 +8,7 @@
 
 #import "FirstViewController.h"
 #import "DetailedItermViewController.h"
-#import "NewItermViewController.h"
+#import "NewImageViewController.h"
 
 
 @interface FirstViewController ()

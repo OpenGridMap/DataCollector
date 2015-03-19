@@ -22,24 +22,28 @@ PODS:
     - RKValueTransformers (~> 1.1.0)
   - RestKit/Support (0.24.0):
     - TransitionKit (= 2.1.0)
-  - Reveal-iOS-SDK (1.0.7)
+  - Reveal-iOS-SDK (1.5.1)
   - RKValueTransformers (1.1.1)
   - SOCKit (1.1)
   - TransitionKit (2.1.0)
+  - XLForm (2.1.0)
 
 DEPENDENCIES:
+  - AFNetworking
   - HockeySDK
   - RestKit
   - Reveal-iOS-SDK
+  - XLForm (~> 2.1.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 80c4e0652b08eb34e25b9c0ff3c82556fe5967b4
   HockeySDK: bfd1f5ac75938b07499c4ac12932244b72a2e70b
   ISO8601DateFormatterValueTransformer: a705384ea6531255258e25b6480ba1180db703a0
   RestKit: 8e301e50e1d25ce427215539f4fd72463f4a2a58
-  Reveal-iOS-SDK: 7ee5e9b37ef13dcd93ae1736c1b72c7c650da3e3
+  Reveal-iOS-SDK: dcfeb671c7da222c85f18f866da2ce88de075524
   RKValueTransformers: 67b4ea3eb6a1c1a0b8c3c37eb4e4c05e4febeba2
   SOCKit: d8d0dd3688ae1026c12367570da8fa8e1a6980fb
   TransitionKit: 6a6f3ddda38ae758778aa889dcb930e4f8d64edc
+  XLForm: 7d6855fe88df37b44ea00da80cc0cf3a945cfb1b
 
 COCOAPODS: 0.35.0
