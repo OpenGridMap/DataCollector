@@ -6,10 +6,9 @@
 //  Copyright (c) 2015 allen. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "XLForm.h"
 #import "XLFormViewController.h"
-
+#import "XLFormRowDescriptor.h"
 //@interface SelectorsFormViewController : XLFormViewController
 @interface NewItermViewController : XLFormViewController
 

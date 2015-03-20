@@ -19,6 +19,9 @@
 		9F36A5971A2A6F2E008B65A5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F36A5951A2A6F2E008B65A5 /* LaunchScreen.xib */; };
 		9F42B7701ABAE15500720DEF /* NewItermViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F42B76F1ABAE15500720DEF /* NewItermViewController.m */; };
 		9F42B7731ABAE5A900720DEF /* CLLocationValueTrasformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F42B7721ABAE5A900720DEF /* CLLocationValueTrasformer.m */; };
+		9F42B77F1ABB113A00720DEF /* CustomSelectorsFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F42B77E1ABB113A00720DEF /* CustomSelectorsFormViewController.m */; };
+		9F42B7821ABB11D700720DEF /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F42B7811ABB11D700720DEF /* MapViewController.m */; };
+		9F42B7841ABB125700720DEF /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F42B7831ABB125700720DEF /* MapViewController.xib */; };
 		9F658A791A681B7200B92428 /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F658A781A681B7200B92428 /* OverlayView.xib */; };
 		9F80440A1A4071B000A4AEE8 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8044091A4071B000A4AEE8 /* User.m */; };
 		9F8CE62D1A447CAB00C5257E /* DataIterm.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8CE62C1A447CAB00C5257E /* DataIterm.m */; };
@@ -72,6 +75,11 @@
 		9F42B76F1ABAE15500720DEF /* NewItermViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewItermViewController.m; sourceTree = "<group>"; };
 		9F42B7711ABAE5A900720DEF /* CLLocationValueTrasformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLLocationValueTrasformer.h; sourceTree = "<group>"; };
 		9F42B7721ABAE5A900720DEF /* CLLocationValueTrasformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLLocationValueTrasformer.m; sourceTree = "<group>"; };
+		9F42B77D1ABB113A00720DEF /* CustomSelectorsFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSelectorsFormViewController.h; sourceTree = "<group>"; };
+		9F42B77E1ABB113A00720DEF /* CustomSelectorsFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSelectorsFormViewController.m; sourceTree = "<group>"; };
+		9F42B7801ABB11D700720DEF /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		9F42B7811ABB11D700720DEF /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		9F42B7831ABB125700720DEF /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		9F6095971A408C6600E4D941 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		9F658A781A681B7200B92428 /* OverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverlayView.xib; sourceTree = "<group>"; };
 		9F8044081A4071B000A4AEE8 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -158,12 +166,11 @@
 		9F17DFA11ABADFA9000B9491 /* WorkFlow */ = {
 			isa = PBXGroup;
 			children = (
+				9F42B7761ABB10A500720DEF /* CustomSelectors */,
 				9F94271C1A49AEE600BE4D89 /* NewImageViewController.h */,
 				9F94271D1A49AEE600BE4D89 /* NewImageViewController.m */,
 				9F42B76E1ABAE15500720DEF /* NewItermViewController.h */,
 				9F42B76F1ABAE15500720DEF /* NewItermViewController.m */,
-				9F42B7711ABAE5A900720DEF /* CLLocationValueTrasformer.h */,
-				9F42B7721ABAE5A900720DEF /* CLLocationValueTrasformer.m */,
 			);
 			name = WorkFlow;
 			sourceTree = "<group>";
@@ -230,6 +237,20 @@
 				9F36A5A11A2A6F2E008B65A5 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9F42B7761ABB10A500720DEF /* CustomSelectors */ = {
+			isa = PBXGroup;
+			children = (
+				9F42B7711ABAE5A900720DEF /* CLLocationValueTrasformer.h */,
+				9F42B7721ABAE5A900720DEF /* CLLocationValueTrasformer.m */,
+				9F42B77D1ABB113A00720DEF /* CustomSelectorsFormViewController.h */,
+				9F42B77E1ABB113A00720DEF /* CustomSelectorsFormViewController.m */,
+				9F42B7801ABB11D700720DEF /* MapViewController.h */,
+				9F42B7811ABB11D700720DEF /* MapViewController.m */,
+				9F42B7831ABB125700720DEF /* MapViewController.xib */,
+			);
+			name = CustomSelectors;
 			sourceTree = "<group>";
 		};
 		9F8044061A406F7300A4AEE8 /* Model */ = {
@@ -365,6 +386,7 @@
 				9FBA415B1A6E9C6000D6FF42 /* superMari.jpg in Resources */,
 				9F36A5921A2A6F2E008B65A5 /* Main.storyboard in Resources */,
 				9F658A791A681B7200B92428 /* OverlayView.xib in Resources */,
+				9F42B7841ABB125700720DEF /* MapViewController.xib in Resources */,
 				9FBA415A1A6E9C6000D6FF42 /* paper.jpg in Resources */,
 				9F36A5971A2A6F2E008B65A5 /* LaunchScreen.xib in Resources */,
 				9F36A5941A2A6F2E008B65A5 /* Images.xcassets in Resources */,
@@ -449,6 +471,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F42B77F1ABB113A00720DEF /* CustomSelectorsFormViewController.m in Sources */,
 				9F8CE62D1A447CAB00C5257E /* DataIterm.m in Sources */,
 				9FE6E72C1A71509C00DBEA5D /* ConnectionHandler.m in Sources */,
 				9FE6E72F1A7150B400DBEA5D /* MappingProvider.m in Sources */,
@@ -459,6 +482,7 @@
 				9F1680331A42E4DB00F7A129 /* Model.xcdatamodeld in Sources */,
 				9F42B7731ABAE5A900720DEF /* CLLocationValueTrasformer.m in Sources */,
 				9FAEFB181A2A84C10017DDD5 /* MyProfileViewController.m in Sources */,
+				9F42B7821ABB11D700720DEF /* MapViewController.m in Sources */,
 				9F9427211A49B20800BE4D89 /* DetailedItermViewController.m in Sources */,
 				9F36A58C1A2A6F2E008B65A5 /* FirstViewController.m in Sources */,
 				9F42B7701ABAE15500720DEF /* NewItermViewController.m in Sources */,
