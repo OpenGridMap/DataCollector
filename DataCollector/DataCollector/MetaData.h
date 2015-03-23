@@ -18,8 +18,8 @@
 @property (nonatomic, retain) NSString * deviceID;
 @property (nonatomic, retain) NSNumber * latitude;
 @property (nonatomic, retain) NSNumber * longitude;
-@property (nonatomic, retain) NSNumber * metadataId;
-@property (nonatomic, retain) id tags;
+@property (nonatomic, retain) NSString * metadataId;
+@property (nonatomic, retain) NSMutableArray* tags;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * user;
 @property (nonatomic, retain) DataIterm *whichIterm;

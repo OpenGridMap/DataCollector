@@ -75,8 +75,9 @@
         [dateComponents setDay:r];
         NSDate *startDate = [calendar dateFromComponents:dateComponents];
         
-        DataIterm* discusstion = [[[DataIterm alloc] init] initWithAuthor:[NSString stringWithFormat: @"user%d", i] publischDate:startDate content:[NSString stringWithFormat: @"This is the content description for data iterm%d.", i] title:[NSString stringWithFormat: @"title%d", i] image:[UIImage imageNamed:_thumbnails[i-1]]];
-        [_objects addObject:discusstion];
+        //DataIterm* discusstion = [[[DataIterm alloc] init] initWithAuthor:[NSString stringWithFormat: @"user%d", i] publischDate:startDate content:[NSString stringWithFormat: @"This is the content description for data iterm%d.", i] title:[NSString stringWithFormat: @"title%d", i] image:[UIImage imageNamed:_thumbnails[i-1]]];
+        //DataIterm* discusstion = [[[DataIterm alloc] init] initWithEntity:<#(NSEntityDescription *)#> insertIntoManagedObjectContext:<#(NSManagedObjectContext *)#>
+        //[_objects addObject:discusstion];
     }
 }
 
@@ -156,9 +157,9 @@
 //    [request startAsynchronous];
     
     cell.imageView.image = [UIImage imageNamed:[self.thumbnails objectAtIndex:indexPath.row]];
-    cell.textLabel.text = object.title;
+    cell.textLabel.text = object.itermId;
     cell.detailTextLabel.text = object.content;
-    NSLog(@"%@", object.title);
+    NSLog(@"%@", object.itermId);
 
     return cell;
 }

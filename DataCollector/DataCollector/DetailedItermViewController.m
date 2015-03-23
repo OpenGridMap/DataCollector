@@ -8,6 +8,8 @@
 
 #import "DetailedItermViewController.h"
 #import "DataIterm.h"
+#import "User.h"
+#import "MetaData.h"
 
 @interface DetailedItermViewController ()
 - (void)configureView;
@@ -45,14 +47,14 @@
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
-    NSString *stringFromDate = [formatter stringFromDate:[_detailItem publischDate]];
+    NSString *stringFromDate = [formatter stringFromDate:[_detailItem date]];
     //NSLog([_detailItem title]);
-    self.title=[_detailItem title];
+    self.title=_detailItem.itermId;
     _dateField.text=stringFromDate;
-    _titleField.text=[_detailItem title];
-    _autherField.text=[_detailItem author];
+    _titleField.text=[_detailItem.metadata title];
+    _autherField.text=[_detailItem.createdBy givenName];
     _contentField.text=[_detailItem content];
-    _imageView.image= [_detailItem image];
+    //_imageView.image= [_detailItem image];
 }
 
 - (void)didReceiveMemoryWarning {

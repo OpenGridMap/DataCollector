@@ -19,7 +19,7 @@
 @property (nonatomic, retain) NSString * dataPathWeb;
 @property (nonatomic, retain) NSDate * date;
 @property (nonatomic, retain) NSString * fileName;
-@property (nonatomic, retain) NSNumber * itermId;
+@property (nonatomic, retain) NSString * itermId;
 @property (nonatomic, retain) User *createdBy;
 @property (nonatomic, retain) MetaData *metadata;
 
