@@ -2,26 +2,32 @@
 //  User.h
 //  DataCollector
 //
-//  Created by allen on 16/12/14.
-//  Copyright (c) 2014 allen. All rights reserved.
+//  Created by allen on 23/03/15.
+//  Copyright (c) 2015 allen. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+
+@class DataIterm;
 
 @interface User : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * userId;
 @property (nonatomic, retain) NSString * password;
 @property (nonatomic, retain) NSString * email;
+@property (nonatomic, retain) NSString * familyName;
+@property (nonatomic, retain) NSString * givenName;
+@property (nonatomic, retain) NSData * image;
+@property (nonatomic, retain) NSString * desc;
+@property (nonatomic, retain) NSSet *iterms;
+@end
 
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * phoneNumber;
-@property (nonatomic, retain) NSString * blog;
-@property (nonatomic, retain) NSString * introduction;
-@property (nonatomic, retain) NSData   * profileImageData;
+@interface User (CoreDataGeneratedAccessors)
 
-//- (id)initWithEmail:(NSString *)email phoneNumber:(NSString *)phoneNumber;
-
+- (void)addItermsObject:(DataIterm *)value;
+- (void)removeItermsObject:(DataIterm *)value;
+- (void)addIterms:(NSSet *)values;
+- (void)removeIterms:(NSSet *)values;
 
 @end

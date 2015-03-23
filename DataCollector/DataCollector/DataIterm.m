@@ -1,25 +1,26 @@
 //
-//  Discusstion.m
+//  DataIterm.m
 //  DataCollector
 //
-//  Created by allen on 19/12/14.
-//  Copyright (c) 2014 allen. All rights reserved.
+//  Created by allen on 23/03/15.
+//  Copyright (c) 2015 allen. All rights reserved.
 //
 
 #import "DataIterm.h"
+#import "MetaData.h"
+#import "User.h"
+
 
 @implementation DataIterm
 
-- (id)initWithAuthor:(NSString*)author publischDate:(NSDate*)publischDate content:(NSString*)content title:(NSString*)title image:(UIImage*) image{
-    self = [super init];
-    if (self) {
-        _title=title;
-        _author=author;
-        _publischDate=publischDate;
-        _content=content;
-        _image=image;
-    }
-    return self;
-}
+@dynamic content;
+@dynamic dataPath;
+@dynamic dataPathThumbnail;
+@dynamic dataPathWeb;
+@dynamic date;
+@dynamic fileName;
+@dynamic itermId;
+@dynamic createdBy;
+@dynamic metadata;
 
 @end

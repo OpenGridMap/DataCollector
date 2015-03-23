@@ -1,26 +1,26 @@
 //
-//  Discusstion.h
+//  DataIterm.h
 //  DataCollector
 //
-//  Created by allen on 19/12/14.
-//  Copyright (c) 2014 allen. All rights reserved.
+//  Created by allen on 23/03/15.
+//  Copyright (c) 2015 allen. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
-@interface DataIterm : NSObject
+@class MetaData, User;
 
-@property (strong, nonatomic) NSNumber *discusstionId;
-@property (strong, nonatomic) NSString* author;
-@property (strong, nonatomic) NSDate* publischDate;
-@property (strong, nonatomic) NSString* title;
-@property (strong, nonatomic) NSString* content;
-@property (strong, nonatomic) UIImage* image;
+@interface DataIterm : NSManagedObject
 
-
-@property (strong, nonatomic) NSSet* comments;
-
-- (id)initWithAuthor:(NSString*)author publischDate:(NSDate*)publischDate content:(NSString*)content title:(NSString*)title image:(UIImage*) image;
+@property (nonatomic, retain) NSString * content;
+@property (nonatomic, retain) NSString * dataPath;
+@property (nonatomic, retain) NSString * dataPathThumbnail;
+@property (nonatomic, retain) NSString * dataPathWeb;
+@property (nonatomic, retain) NSDate * date;
+@property (nonatomic, retain) NSString * fileName;
+@property (nonatomic, retain) NSNumber * itermId;
+@property (nonatomic, retain) User *createdBy;
+@property (nonatomic, retain) MetaData *metadata;
 
 @end
