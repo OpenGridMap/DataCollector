@@ -240,33 +240,33 @@ NSString *const kSwitchBool = @"switchBool";
     
     
     // Second section
-    section = [XLFormSectionDescriptor formSectionWithTitle:@"Data"];
-    [form addFormSection:section];
-    
-    // Selector Push
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kSelectorPush rowType:XLFormRowDescriptorTypeSelectorPush title:@"Image"];
-    row.selectorOptions = @[[XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"Cable"],
-                            [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Converter"],
-                            [XLFormOptionsObject formOptionsObjectWithValue:@(2) displayText:@"Generator"],
-                            [XLFormOptionsObject formOptionsObjectWithValue:@(3) displayText:@"Line"],
-                            [XLFormOptionsObject formOptionsObjectWithValue:@(4) displayText:@"Cabinet"]
-                            ];
-    row.value = [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Converter"];
-    [section addFormRow:row];
+//    section = [XLFormSectionDescriptor formSectionWithTitle:@"Data"];
+//    [form addFormSection:section];
+//    
+//    // Selector Push
+//    row = [XLFormRowDescriptor formRowDescriptorWithTag:kSelectorPush rowType:XLFormRowDescriptorTypeSelectorPush title:@"Image"];
+//    row.selectorOptions = @[[XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"Cable"],
+//                            [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Converter"],
+//                            [XLFormOptionsObject formOptionsObjectWithValue:@(2) displayText:@"Generator"],
+//                            [XLFormOptionsObject formOptionsObjectWithValue:@(3) displayText:@"Line"],
+//                            [XLFormOptionsObject formOptionsObjectWithValue:@(4) displayText:@"Cabinet"]
+//                            ];
+//    row.value = [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Converter"];
+//    [section addFormRow:row];
     
     // --------- Custom Selectors
     // selector with SegueId
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomSelectors rowType:XLFormRowDescriptorTypeButton
-                                                  title:@"Audio"];
-    // set up the selector controller class
-    //row.action.viewControllerClass = [MapViewController class];
-    //row.action.viewControllerClass = [CustomSelectorsFormViewController class];
-    //row.action.formSegueIdenfifier = @"MapViewControllerSegue";
-
-    row.valueTransformer = [CLLocationValueTrasformer class];
-    // Set up the default value
-    row.value = [[CLLocation alloc] initWithLatitude:-33 longitude:-56];
-    [section addFormRow:row];
+//    row = [XLFormRowDescriptor formRowDescriptorWithTag:kCustomSelectors rowType:XLFormRowDescriptorTypeButton
+//                                                  title:@"Audio"];
+//    // set up the selector controller class
+//    //row.action.viewControllerClass = [MapViewController class];
+//    //row.action.viewControllerClass = [CustomSelectorsFormViewController class];
+//    //row.action.formSegueIdenfifier = @"MapViewControllerSegue";
+//
+//    row.valueTransformer = [CLLocationValueTrasformer class];
+//    // Set up the default value
+//    row.value = [[CLLocation alloc] initWithLatitude:-33 longitude:-56];
+//    [section addFormRow:row];
 
     
 //    // --------- Inline Selectors

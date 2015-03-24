@@ -97,7 +97,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="trash" id="Q2g-vK-Fnv"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="c87-gV-bhk">
                             <connections>
-                                <segue destination="ypl-7l-7N9" kind="show" id="9F2-Tx-mE2"/>
+                                <segue destination="KuV-cL-n2V" kind="show" id="EeO-g2-uxq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -262,10 +262,10 @@
             </objects>
             <point key="canvasLocation" x="3549" y="723.75"/>
         </scene>
-        <!--Workflow-->
+        <!--MetaData-->
         <scene sceneID="4qC-iz-whn">
             <objects>
-                <viewController id="bsg-Rb-ujC" sceneMemberID="viewController">
+                <viewController id="bsg-Rb-ujC" customClass="NewItermViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L2f-cY-79i"/>
                         <viewControllerLayoutGuide type="bottom" id="zAq-Tr-Hcj"/>
@@ -273,28 +273,9 @@
                     <view key="view" contentMode="scaleToFill" id="Zge-JH-5RI">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cVT-7r-mqA">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="64" width="400" height="345"/>
-                                </variation>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="cVT-7r-mqA"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="cVT-7r-mqA"/>
-                            </mask>
-                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Workflow" id="5Id-XI-s3O">
+                    <navigationItem key="navigationItem" title="MetaData" id="5Id-XI-s3O">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="AbA-AC-1Ew">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Pir-LS-MRJ">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -308,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CSd-yP-L6h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2518.5" y="-259.5"/>
+            <point key="canvasLocation" x="5223" y="-370.5"/>
         </scene>
         <!--DetailedView-->
         <scene sceneID="eK7-ev-6X2">
@@ -581,10 +562,10 @@
             </objects>
             <point key="canvasLocation" x="1653" y="-1135.5"/>
         </scene>
-        <!--NewIterm-->
+        <!--Workflow-->
         <scene sceneID="QHc-n1-6ba">
             <objects>
-                <viewController title="NewIterm" id="6AT-A6-bQ5" customClass="NewImageViewController" sceneMemberID="viewController">
+                <viewController title="Workflow" id="6AT-A6-bQ5" customClass="NewImageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j5k-GR-Ccy"/>
                         <viewControllerLayoutGuide type="bottom" id="Dhe-Yf-TQD"/>
@@ -593,9 +574,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5yF-ts-N6V">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                            </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JtW-5A-902">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
@@ -612,61 +590,106 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="trk-xh-SDG">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5yF-ts-N6V">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="648"/>
+                                        </variation>
+                                    </imageView>
+                                </subviews>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="5yF-ts-N6V"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="5yF-ts-N6V"/>
+                                    </mask>
+                                </variation>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5yF-ts-N6V" firstAttribute="leading" secondItem="JtW-5A-902" secondAttribute="leading" id="0FB-kc-5Oh"/>
-                            <constraint firstItem="JtW-5A-902" firstAttribute="top" secondItem="5yF-ts-N6V" secondAttribute="bottom" id="8c1-f2-2Rh"/>
-                            <constraint firstItem="JtW-5A-902" firstAttribute="bottom" secondItem="Dhe-Yf-TQD" secondAttribute="top" id="Ey4-z4-lEa"/>
-                            <constraint firstItem="5yF-ts-N6V" firstAttribute="leading" secondItem="QuL-6N-oo9" secondAttribute="leading" id="GBi-AA-CxI"/>
+                            <constraint firstItem="JtW-5A-902" firstAttribute="trailing" secondItem="trk-xh-SDG" secondAttribute="trailing" id="6DM-Lo-xYA"/>
+                            <constraint firstItem="trk-xh-SDG" firstAttribute="top" secondItem="j5k-GR-Ccy" secondAttribute="bottom" id="73v-hV-ifk"/>
+                            <constraint firstItem="JtW-5A-902" firstAttribute="bottom" secondItem="Dhe-Yf-TQD" secondAttribute="top" id="Ey4-z4-lEa">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstAttribute="trailing" secondItem="JtW-5A-902" secondAttribute="trailing" id="GJD-64-lcd"/>
-                            <constraint firstItem="5yF-ts-N6V" firstAttribute="trailing" secondItem="JtW-5A-902" secondAttribute="trailing" id="eYV-GU-JPy"/>
-                            <constraint firstItem="5yF-ts-N6V" firstAttribute="top" secondItem="QuL-6N-oo9" secondAttribute="top" constant="20" symbolic="YES" id="mHM-va-O3g"/>
+                            <constraint firstItem="JtW-5A-902" firstAttribute="leading" secondItem="QuL-6N-oo9" secondAttribute="leading" id="JPB-vK-RqL"/>
+                            <constraint firstItem="JtW-5A-902" firstAttribute="top" secondItem="trk-xh-SDG" secondAttribute="bottom" id="NP5-EV-7OA"/>
+                            <constraint firstItem="JtW-5A-902" firstAttribute="top" secondItem="trk-xh-SDG" secondAttribute="bottom" id="WcU-O3-h4l"/>
+                            <constraint firstItem="JtW-5A-902" firstAttribute="leading" secondItem="trk-xh-SDG" secondAttribute="leading" id="Ykg-ba-3v3"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="5yF-ts-N6V"/>
                                 <exclude reference="JtW-5A-902"/>
+                                <exclude reference="trk-xh-SDG"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="8c1-f2-2Rh"/>
+                                <exclude reference="73v-hV-ifk"/>
+                                <exclude reference="6DM-Lo-xYA"/>
                                 <exclude reference="Ey4-z4-lEa"/>
                                 <exclude reference="GJD-64-lcd"/>
-                                <exclude reference="0FB-kc-5Oh"/>
-                                <exclude reference="GBi-AA-CxI"/>
-                                <exclude reference="eYV-GU-JPy"/>
-                                <exclude reference="mHM-va-O3g"/>
+                                <exclude reference="JPB-vK-RqL"/>
+                                <exclude reference="NP5-EV-7OA"/>
+                                <exclude reference="WcU-O3-h4l"/>
+                                <exclude reference="Ykg-ba-3v3"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="5yF-ts-N6V"/>
                                 <include reference="JtW-5A-902"/>
+                                <include reference="trk-xh-SDG"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="8c1-f2-2Rh"/>
+                                <include reference="73v-hV-ifk"/>
+                                <include reference="6DM-Lo-xYA"/>
                                 <include reference="Ey4-z4-lEa"/>
                                 <include reference="GJD-64-lcd"/>
-                                <include reference="0FB-kc-5Oh"/>
-                                <include reference="GBi-AA-CxI"/>
-                                <include reference="eYV-GU-JPy"/>
-                                <include reference="mHM-va-O3g"/>
+                                <include reference="JPB-vK-RqL"/>
+                                <include reference="NP5-EV-7OA"/>
+                                <include reference="WcU-O3-h4l"/>
+                                <include reference="Ykg-ba-3v3"/>
                             </mask>
                         </variation>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Workflow" id="zfY-Vv-bAy">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="2xr-ja-FrW">
+                            <connections>
+                                <segue destination="49e-Tb-3d3" kind="show" id="QPn-40-Oec"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Uik-fM-As4">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3Sc-PJ-gBL">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Meta">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="TBd-0H-R8f" kind="show" id="1EW-Le-hL7"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="5yF-ts-N6V" id="Vlt-7G-xzZ"/>
                         <outlet property="toolBar" destination="JtW-5A-902" id="5WX-18-gpO"/>
                     </connections>
                 </viewController>
-                <navigationItem title="New Iterm" id="d1X-gW-Lqa">
+                <navigationItem title="Workflow" id="d1X-gW-Lqa">
                     <barButtonItem key="rightBarButtonItem" systemItem="save" id="zrr-OL-iC5" userLabel="Save"/>
                 </navigationItem>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WHG-XI-Diy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3181.5" y="-259.5"/>
+            <point key="canvasLocation" x="-742.5" y="162"/>
         </scene>
         <!--Map View-->
         <scene sceneID="wg7-f3-ORb">
@@ -724,8 +747,8 @@
                     <connections>
                         <segue destination="zfo-q3-aS1" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="v4J-Mi-cme" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="ypl-7l-7N9" kind="relationship" relationship="viewControllers" id="a7L-Tp-I3d"/>
-                        <segue destination="BW4-Q2-iD7" kind="relationship" relationship="viewControllers" id="hd0-S6-Lep"/>
+                        <segue destination="KuV-cL-n2V" kind="relationship" relationship="viewControllers" id="3w5-KR-efi"/>
+                        <segue destination="BW4-Q2-iD7" kind="relationship" relationship="viewControllers" id="SfH-fm-ZFA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -738,6 +761,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zfo-q3-aS1" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Data" image="Data" id="acW-dT-cKf"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="X6O-dN-LmV"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QdM-2A-dVy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -773,25 +797,6 @@
             </objects>
             <point key="canvasLocation" x="2631" y="723.75"/>
         </scene>
-        <!--WorkFlow-->
-        <scene sceneID="Vkq-wE-yMW">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ypl-7l-7N9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="WorkFlow" image="workFlow" id="27X-uL-xJn"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HNr-HV-SGo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="bsg-Rb-ujC" kind="relationship" relationship="rootViewController" id="hcC-fA-HXu"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jgd-JJ-fBa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1653" y="-259.5"/>
-        </scene>
         <!--Collection-->
         <scene sceneID="X1Z-Lm-kpk">
             <objects>
@@ -811,6 +816,43 @@
             </objects>
             <point key="canvasLocation" x="157.5" y="1182.75"/>
         </scene>
+        <!--Workflow-->
+        <scene sceneID="7rT-yf-3Kc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KuV-cL-n2V" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Workflow" image="workFlow" id="Nwb-t6-4N2"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xvy-Uc-CrX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6AT-A6-bQ5" kind="relationship" relationship="rootViewController" id="juF-FA-wgi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x8B-En-vxG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2478" y="-375.75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eQV-hU-7bK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TBd-0H-R8f" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Mn-yP-a4g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bsg-Rb-ujC" kind="relationship" relationship="rootViewController" id="C5I-BV-IsB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3uD-td-VlZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4305" y="-370.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Data" width="30" height="28"/>
@@ -821,6 +863,6 @@
         <image name="workFlow" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9F2-Tx-mE2"/>
+        <segue reference="EeO-g2-uxq"/>
     </inferredMetricsTieBreakers>
 </document>

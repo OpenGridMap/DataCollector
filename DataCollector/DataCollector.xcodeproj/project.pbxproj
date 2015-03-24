@@ -22,9 +22,10 @@
 		9F42B77F1ABB113A00720DEF /* CustomSelectorsFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F42B77E1ABB113A00720DEF /* CustomSelectorsFormViewController.m */; };
 		9F42B7821ABB11D700720DEF /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F42B7811ABB11D700720DEF /* MapViewController.m */; };
 		9F42B7841ABB125700720DEF /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F42B7831ABB125700720DEF /* MapViewController.xib */; };
+		9F42B7AE1AC0730300720DEF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F42B7AD1AC0730300720DEF /* User.m */; };
+		9F42B7B41AC0730400720DEF /* MetaData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F42B7B31AC0730400720DEF /* MetaData.m */; };
+		9F44EAE91AC1C99900125FDA /* DataIterm.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F44EAE81AC1C99900125FDA /* DataIterm.m */; };
 		9F658A791A681B7200B92428 /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F658A781A681B7200B92428 /* OverlayView.xib */; };
-		9F80440A1A4071B000A4AEE8 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8044091A4071B000A4AEE8 /* User.m */; };
-		9F8CE62D1A447CAB00C5257E /* DataIterm.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8CE62C1A447CAB00C5257E /* DataIterm.m */; };
 		9F94271E1A49AEE600BE4D89 /* NewImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F94271D1A49AEE600BE4D89 /* NewImageViewController.m */; };
 		9F9427211A49B20800BE4D89 /* DetailedItermViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9427201A49B20800BE4D89 /* DetailedItermViewController.m */; };
 		9FAEFB181A2A84C10017DDD5 /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAEFB171A2A84C10017DDD5 /* MyProfileViewController.m */; };
@@ -80,12 +81,14 @@
 		9F42B7801ABB11D700720DEF /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		9F42B7811ABB11D700720DEF /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		9F42B7831ABB125700720DEF /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		9F42B7AC1AC0730300720DEF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		9F42B7AD1AC0730300720DEF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		9F42B7B21AC0730400720DEF /* MetaData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetaData.h; sourceTree = "<group>"; };
+		9F42B7B31AC0730400720DEF /* MetaData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetaData.m; sourceTree = "<group>"; };
+		9F44EAE71AC1C99900125FDA /* DataIterm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataIterm.h; sourceTree = "<group>"; };
+		9F44EAE81AC1C99900125FDA /* DataIterm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataIterm.m; sourceTree = "<group>"; };
 		9F6095971A408C6600E4D941 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		9F658A781A681B7200B92428 /* OverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverlayView.xib; sourceTree = "<group>"; };
-		9F8044081A4071B000A4AEE8 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		9F8044091A4071B000A4AEE8 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		9F8CE62B1A447CAB00C5257E /* DataIterm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataIterm.h; sourceTree = "<group>"; };
-		9F8CE62C1A447CAB00C5257E /* DataIterm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataIterm.m; sourceTree = "<group>"; };
 		9F94271C1A49AEE600BE4D89 /* NewImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewImageViewController.h; sourceTree = "<group>"; };
 		9F94271D1A49AEE600BE4D89 /* NewImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewImageViewController.m; sourceTree = "<group>"; };
 		9F94271F1A49B20800BE4D89 /* DetailedItermViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedItermViewController.h; sourceTree = "<group>"; };
@@ -256,11 +259,13 @@
 		9F8044061A406F7300A4AEE8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9F8044081A4071B000A4AEE8 /* User.h */,
-				9F8044091A4071B000A4AEE8 /* User.m */,
+				9F44EAE71AC1C99900125FDA /* DataIterm.h */,
+				9F44EAE81AC1C99900125FDA /* DataIterm.m */,
 				9F1680311A42E4DB00F7A129 /* Model.xcdatamodeld */,
-				9F8CE62B1A447CAB00C5257E /* DataIterm.h */,
-				9F8CE62C1A447CAB00C5257E /* DataIterm.m */,
+				9F42B7B21AC0730400720DEF /* MetaData.h */,
+				9F42B7B31AC0730400720DEF /* MetaData.m */,
+				9F42B7AC1AC0730300720DEF /* User.h */,
+				9F42B7AD1AC0730300720DEF /* User.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -472,15 +477,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F42B77F1ABB113A00720DEF /* CustomSelectorsFormViewController.m in Sources */,
-				9F8CE62D1A447CAB00C5257E /* DataIterm.m in Sources */,
 				9FE6E72C1A71509C00DBEA5D /* ConnectionHandler.m in Sources */,
 				9FE6E72F1A7150B400DBEA5D /* MappingProvider.m in Sources */,
 				9F36A5891A2A6F2E008B65A5 /* AppDelegate.m in Sources */,
-				9F80440A1A4071B000A4AEE8 /* User.m in Sources */,
 				9F94271E1A49AEE600BE4D89 /* NewImageViewController.m in Sources */,
+				9F42B7AE1AC0730300720DEF /* User.m in Sources */,
+				9F42B7B41AC0730400720DEF /* MetaData.m in Sources */,
 				9F0BA4A61AB83DF400B6E086 /* LocationViewController.m in Sources */,
 				9F1680331A42E4DB00F7A129 /* Model.xcdatamodeld in Sources */,
 				9F42B7731ABAE5A900720DEF /* CLLocationValueTrasformer.m in Sources */,
+				9F44EAE91AC1C99900125FDA /* DataIterm.m in Sources */,
 				9FAEFB181A2A84C10017DDD5 /* MyProfileViewController.m in Sources */,
 				9F42B7821ABB11D700720DEF /* MapViewController.m in Sources */,
 				9F9427211A49B20800BE4D89 /* DetailedItermViewController.m in Sources */,
