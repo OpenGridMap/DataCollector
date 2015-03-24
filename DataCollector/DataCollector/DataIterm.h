@@ -2,14 +2,14 @@
 //  DataIterm.h
 //  DataCollector
 //
-//  Created by allen on 23/03/15.
+//  Created by allen on 24/03/15.
 //  Copyright (c) 2015 allen. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class MetaData, User;
+@class Collection, MetaData, User;
 
 @interface DataIterm : NSManagedObject
 
@@ -22,5 +22,6 @@
 @property (nonatomic, retain) NSString * itermId;
 @property (nonatomic, retain) User *createdBy;
 @property (nonatomic, retain) MetaData *metadata;
+@property (nonatomic, retain) Collection *whichCollection;
 
 @end

@@ -2,7 +2,7 @@
 //  MetaData.h
 //  DataCollector
 //
-//  Created by allen on 23/03/15.
+//  Created by allen on 24/03/15.
 //  Copyright (c) 2015 allen. All rights reserved.
 //
 
@@ -19,7 +19,7 @@
 @property (nonatomic, retain) NSNumber * latitude;
 @property (nonatomic, retain) NSNumber * longitude;
 @property (nonatomic, retain) NSString * metadataId;
-@property (nonatomic, retain) NSMutableArray* tags;
+@property (nonatomic, retain) NSMutableArray * tags;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * user;
 @property (nonatomic, retain) DataIterm *whichIterm;
